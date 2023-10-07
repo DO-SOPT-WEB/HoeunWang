@@ -1,0 +1,24 @@
+h1 {
+  color: orange;
+  background-color: yellow;
+}
+h2 {
+  color: green;
+}
+p {
+  font-size: 20px;
+}
+li:first-child {
+  color: blue;
+}
+li:nth-child(3) {
+  color: purple;
+}
+
+li:last-child {
+  text-decoration: underline;
+}
+
+li::before {
+  content: "✔";
+}
