@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "TheJamsil5Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+* {
+  margin: 0em;
+  padding: 0em;
+  font-family: "TheJamsil5Bold";
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 375px;
+}
+header {
+  background-color: #ffc0cb;
+  font-size: xx-large;
+}
+section {
+  margin: 2em;
+}
+.income {
+  color: blue;
+}
+.expenditure {
+  color: red;
+}
+#my-assets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#my-assets .title {
+  font-size: large;
+}
+#my-assets .cost {
+  font-size: xx-large;
+}
+#my-assets .spent-wrapper {
+  display: flex;
+  gap: 1em;
+}
