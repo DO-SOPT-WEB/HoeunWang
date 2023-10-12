@@ -48,6 +48,7 @@ a {
   padding-left: 2em;
   position: sticky;
   top: 0em;
+  z-index: 1;
 }
 
 /*header*/
