@@ -108,6 +108,7 @@ nav .summary a:hover {
 #spring .gallery {
   display: flex;
   flex-wrap: wrap;
+
   justify-content: space-around;
   margin: 0em 4em;
 }
