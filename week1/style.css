@@ -19,7 +19,18 @@ img {
 
 #spring .gallery {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+#spring .gallery img {
+  width: 300px;
+  height: 300px;
+}
+
+#summer .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
