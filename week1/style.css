@@ -2,8 +2,11 @@
   margin: 0px;
   padding: 0px;
 }
+img {
+  object-fit: cover;
+}
 
-#preview {
+#preview .gallery {
   display: flex;
   justify-content: space-between;
   overflow-x: scroll;
