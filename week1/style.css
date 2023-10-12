@@ -16,7 +16,13 @@ body {
 }
 img {
   object-fit: cover;
+  transform: scale(1);
+  transition: 0.5s;
   box-shadow: 0.2em 0.2em 0.2em#666;
+}
+img:hover {
+  transform: scale(1.05);
+  transition: 0.5s;
 }
 a {
   text-decoration: none;
