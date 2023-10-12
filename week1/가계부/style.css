@@ -16,13 +16,14 @@ body {
   justify-content: center;
   align-items: center;
   min-width: 375px;
+  max-height: screen;
 }
 header {
   background-color: #ffc0cb;
   font-size: xx-large;
 }
 section {
-  margin: 2em;
+  margin: 1em;
 }
 .income {
   color: blue;
@@ -30,6 +31,8 @@ section {
 .expenditure {
   color: red;
 }
+
+/*내 지출 상단부분*/
 #my-assets {
   display: flex;
   flex-direction: column;
@@ -45,4 +48,14 @@ section {
 #my-assets .spent-wrapper {
   display: flex;
   gap: 1em;
+}
+
+/*지출 내역 리스트*/
+#lists-wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+#list {
+  display: flex;
 }
