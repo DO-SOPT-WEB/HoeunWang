@@ -1,0 +1,12 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+#preview {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: scroll;
+  gap: 10px;
+  height: 300px;
+}
