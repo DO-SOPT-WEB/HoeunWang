@@ -15,6 +15,7 @@ body {
 }
 img {
   object-fit: cover;
+  box-shadow: 5px 5px 3px #666;
 }
 a {
   text-decoration: none;
@@ -101,11 +102,12 @@ nav .summary a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin: 0px 40px;
 }
 
 #spring .gallery img {
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
   margin: 10px 0px;
 }
 
