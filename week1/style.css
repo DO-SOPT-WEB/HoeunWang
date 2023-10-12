@@ -6,42 +6,42 @@
   font-style: normal;
 }
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0em;
+  padding: 0em;
   font-family: "KimjungchulMyungjo-Bold";
 }
 body {
   background-color: #f6f4e8;
+  min-width: 375px;
 }
 img {
   object-fit: cover;
-  box-shadow: 5px 5px 3px #666;
+  box-shadow: 0.2em 0.2em 0.2em#666;
 }
 a {
   text-decoration: none;
 }
 .seperate-line {
-  border-top: 3px solid #1d3124;
-  margin: 30px auto;
+  border-top: 0.2em solid #1d3124;
+  margin: 2em auto;
   width: 40%;
   height: 0px;
 }
 .seperate-line:after {
   content: "◆";
   position: relative;
-  top: -13px;
-  left: calc(50% - 8px);
+  top: -0.8em;
+  left: calc(50% - 0.8em);
   color: #1d3124;
 }
 .title {
   background-color: #bacec1;
   color: #1d3124;
   font-size: x-large;
-  margin: 30px 0px;
-}
-.section {
-  display: flex;
-  justify-content: center;
+  margin: 1.5em 0em;
+  padding-left: 2em;
+  position: sticky;
+  top: 0em;
 }
 
 /*header*/
@@ -50,31 +50,31 @@ header {
   justify-content: center;
   color: #1d3124;
   font-size: xx-large;
-  margin: 30px 0px;
+  margin: 1em 0em;
 }
 
 /*preview*/
 #preview {
   display: flex;
   overflow-x: scroll;
-  padding-bottom: 10px;
+  padding-bottom: 1em;
 }
 #preview .gallery {
   display: flex;
-  margin: 0px 10px;
+  margin: 0em 1em;
 }
 #preview::-webkit-scrollbar {
-  height: 8px;
+  height: 0.8em;
 }
 
 #preview::-webkit-scrollbar-thumb {
   background: #bacec1;
-  border-radius: 10px;
+  border-radius: 1em;
 }
 
 #preview img {
-  height: 250px;
-  margin: 0px 5px;
+  height: 15em;
+  margin: 0em 0.5em;
 }
 
 /*nav*/
@@ -83,10 +83,10 @@ nav {
   flex-direction: column;
   align-items: center;
   color: #e59560;
-  margin: 20px 0px;
+  margin: 1em 0em;
 }
 nav span {
-  margin-bottom: 10px;
+  margin-bottom: 1em;
 }
 nav .summary a {
   color: #1d3124;
@@ -102,13 +102,13 @@ nav .summary a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 0px 40px;
+  margin: 0em 4em;
 }
 
 #spring .gallery img {
-  width: 280px;
-  height: 280px;
-  margin: 10px 0px;
+  width: 16em;
+  height: 16em;
+  margin: 1em 0em;
 }
 
 /*section2,section4*/
@@ -117,11 +117,11 @@ nav .summary a:hover {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin: 0px 100px;
+  margin: 0em 7em;
 }
 #summer .gallery img,
 #winter .gallery img {
-  margin: 10px;
+  margin: 1em;
 }
 
 #summer .gallery .left,
@@ -139,14 +139,14 @@ nav .summary a:hover {
   flex-wrap: wrap;
 }
 #summer .gallery .left img,
-#winter .gallery .right {
-  width: 500px;
-  height: 500px;
+#winter .gallery .right img {
+  width: 30em;
+  height: 30em;
 }
 #summer .gallery .right img,
-#winter .gallery .left {
-  width: 240px;
-  height: 240px;
+#winter .gallery .left img {
+  width: 14em;
+  height: 14em;
 }
 
 /*section3*/
@@ -156,8 +156,8 @@ nav .summary a:hover {
   justify-content: space-around;
 }
 #autumn .gallery img {
-  width: 300px;
-  height: 300px;
+  width: 30em;
+  height: 30em;
 }
 
 /*footer*/
@@ -171,11 +171,12 @@ footer {
 /*top button*/
 #top-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 1em;
+  right: 1em;
 }
 #top-button img {
-  width: 80px;
-  height: 80px;
+  width: 3em;
+  height: 3em;
   object-fit: fill;
+  box-shadow: none;
 }
