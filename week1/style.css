@@ -19,9 +19,28 @@ img {
 a {
   text-decoration: none;
 }
+.seperate-line {
+  border-top: 3px solid #1d3124;
+  margin: 30px auto;
+  width: 40%;
+  height: 0px;
+}
+.seperate-line:after {
+  content: "◆";
+  position: relative;
+  top: -13px;
+  left: calc(50% - 8px);
+  color: #1d3124;
+}
 .title {
   background-color: #bacec1;
   color: #1d3124;
+  font-size: x-large;
+  margin: 30px 0px;
+}
+.section {
+  display: flex;
+  justify-content: center;
 }
 
 /*header*/
@@ -29,22 +48,8 @@ header {
   display: flex;
   justify-content: center;
   color: #1d3124;
-}
-
-/*nav*/
-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #e59560;
-}
-nav .summary a {
-  color: #1d3124;
-}
-nav .summary a:hover {
-  cursor: pointer;
-  color: #e59560;
-  text-decoration: underline;
+  font-size: xx-large;
+  margin: 30px 0px;
 }
 
 /*preview*/
@@ -52,7 +57,10 @@ nav .summary a:hover {
   display: flex;
   overflow-x: scroll;
   padding-bottom: 10px;
-  padding-left: 0px;
+}
+#preview .gallery {
+  display: flex;
+  margin: 0px 10px;
 }
 #preview::-webkit-scrollbar {
   height: 8px;
@@ -65,37 +73,79 @@ nav .summary a:hover {
 
 #preview img {
   height: 250px;
-  padding-left: 10px;
+  margin: 0px 5px;
+}
+
+/*nav*/
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #e59560;
+  margin: 20px 0px;
+}
+nav span {
+  margin-bottom: 10px;
+}
+nav .summary a {
+  color: #1d3124;
+}
+nav .summary a:hover {
+  cursor: pointer;
+  color: #e59560;
+  text-decoration: underline;
 }
 
 /*section1*/
 #spring .gallery {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 #spring .gallery img {
   width: 300px;
   height: 300px;
+  margin: 10px 0px;
 }
 
 /*section2*/
 #summer .gallery {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
-  justify-content: space-between;
+  margin: 0px 100px;
 }
 #summer .gallery img {
-  width: 300px;
-  height: 300px;
+  margin: 10px;
+}
+
+#summer .gallery .left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#summer .gallery .right {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+}
+#summer .gallery .left img {
+  width: 500px;
+  height: 500px;
+}
+#summer .gallery .right img {
+  width: 240px;
+  height: 240px;
 }
 
 /*section3*/
 #autumn .gallery {
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 #autumn .gallery img {
   width: 300px;
@@ -105,17 +155,39 @@ nav .summary a:hover {
 /*section4*/
 #winter .gallery {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
-  justify-content: space-between;
+  margin: 0px 100px;
 }
 #winter .gallery img {
-  width: 300px;
-  height: 300px;
+  margin: 10px;
+}
+#winter .gallery .left {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#winter .gallery .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#winter .gallery .left img {
+  width: 240px;
+  height: 240px;
+}
+#winter .gallery .right img {
+  width: 500px;
+  height: 500px;
 }
 /*footer*/
 footer {
   display: flex;
   justify-content: center;
+  color: #1d3124;
+  font-size: large;
 }
 
 /*top button*/
