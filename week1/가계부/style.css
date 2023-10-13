@@ -73,6 +73,39 @@ header {
   margin: 0 0.5em;
 }
 
+/*checkbox*/
+.checkbox-wrapper {
+  display: flex;
+  gap: 0.3em;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[id="checkbox-income"] + label,
+input[id="checkbox-expenditure"] + label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 5rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff8498;
+  border-radius: 3em;
+  width: 5rem;
+  height: 2rem;
+
+  cursor: pointer;
+}
+input[id="checkbox-income"]:checked + label,
+input[id="checkbox-expenditure"]:checked + label {
+  background-color: #f9536f;
+}
+
 /*내 지출 상단부분*/
 #my-assets {
   display: flex;
@@ -135,6 +168,7 @@ header {
 #lists-wrapper .list {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 80%;
   background-color: #ffc0cb;
   border-radius: 0.5em;
