@@ -19,11 +19,12 @@ body {
   max-height: screen;
 }
 header {
+  display: flex;
+  justify-content: center;
   background-color: #ffc0cb;
   font-size: xx-large;
-}
-section {
-  margin: 1em;
+  width: 100%;
+  box-shadow: 0em 0.05em 0em 0em #666;
 }
 .income {
   color: blue;
@@ -35,14 +36,29 @@ section {
 /*내 지출 상단부분*/
 #my-assets {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0em 0.08em 0em 0em#666;
+  width: 100%;
+  padding: 3%;
+}
+#my-assets .my-assets-box {
+  display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  border: 0.3em solid black;
+  border-radius: 0.5em;
+  padding: 4% 20%;
+  gap: 0.8em;
+
+  background-color: #ffc0cb;
 }
 
 #my-assets .title {
   font-size: large;
 }
-#my-assets .cost {
+#my-assets .my-cost {
   font-size: xx-large;
 }
 #my-assets .spent-wrapper {
