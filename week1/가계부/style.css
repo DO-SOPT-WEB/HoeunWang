@@ -180,8 +180,11 @@ input[id="checkbox-expenditure"]:checked + label {
   width: 5em;
 }
 #lists-wrapper .list .name {
-  display: flex;
+  display: block;
   width: 10em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 #list-wrapper .list .income,
 #list-wrapper .list .expenditure {
