@@ -37,6 +37,18 @@ header {
   margin: 0em;
   width: 100%;
 }
+.delete-button {
+  width: 1.3rem;
+  height: 1.3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.move-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
 /*내 지출 상단부분*/
 #my-assets {
@@ -100,7 +112,7 @@ header {
 #lists-wrapper .list {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 80%;
   background-color: #ffc0cb;
   border-radius: 0.5em;
@@ -112,4 +124,9 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+#list-wrapper .list .income,
+#list-wrapper .list .expenditure {
+  display: flex;
+  flex-direction: flex-end;
 }
