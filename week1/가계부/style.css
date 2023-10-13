@@ -13,10 +13,10 @@
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
   min-width: 375px;
-  max-height: screen;
+  height: 100vh;
 }
 header {
   display: flex;
@@ -32,6 +32,11 @@ header {
 .expenditure {
   color: red;
 }
+.seperate-line {
+  border-top: 0.2em solid #bfbfbf;
+  margin: 0em;
+  width: 100%;
+}
 
 /*내 지출 상단부분*/
 #my-assets {
@@ -39,8 +44,8 @@ header {
   justify-content: center;
   align-items: center;
   box-shadow: 0em 0.08em 0em 0em#666;
-  width: 100%;
-  padding: 3%;
+  width: -webkit-fill-available;
+  padding: 4% 0% 8% 0%;
 }
 #my-assets .my-assets-box {
   display: flex;
@@ -66,12 +71,45 @@ header {
   gap: 1em;
 }
 
+/*날짜 section*/
+#day {
+  display: flex;
+  justify-content: space-around;
+  padding: 4%;
+}
+
+/*checkbox section*/
+#checkbox {
+  display: flex;
+  justify-content: space-between;
+  padding: 3% 3%;
+  width: -webkit-fill-available;
+}
+
 /*지출 내역 리스트*/
 #lists-wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
   overflow-y: scroll;
+  width: -webkit-fill-available;
+  padding: 3% 0%;
 }
-#list {
+#lists-wrapper .list {
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  background-color: #ffc0cb;
+  border-radius: 0.5em;
+  margin: 0.1%;
+  padding: 5% 5%;
+}
+#lists-wrapper .list .category,
+#lists-wrapper .list .name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
