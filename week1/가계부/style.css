@@ -27,9 +27,11 @@ header {
   box-shadow: 0em 0.05em 0em 0em #666;
 }
 .income {
+  display: flex;
   color: blue;
 }
 .expenditure {
+  display: flex;
   color: red;
 }
 .seperate-line {
@@ -43,11 +45,32 @@ header {
   background: none;
   border: none;
   cursor: pointer;
+  padding-left: 3em;
 }
 .move-button {
   background: none;
   border: none;
   cursor: pointer;
+}
+.add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 2rem;
+  border-radius: 1em;
+  background-color: #ff8498;
+  border: none;
+}
+.cost-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 10em;
+  width: fit-content;
+  padding: 0 0.2em;
+  margin: 0 0.5em;
 }
 
 /*내 지출 상단부분*/
@@ -112,18 +135,19 @@ header {
 #lists-wrapper .list {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   width: 80%;
   background-color: #ffc0cb;
   border-radius: 0.5em;
   margin: 0.1%;
   padding: 5% 5%;
 }
-#lists-wrapper .list .category,
+#lists-wrapper .list .category {
+  display: flex;
+  width: 5em;
+}
 #lists-wrapper .list .name {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 10em;
 }
 #list-wrapper .list .income,
 #list-wrapper .list .expenditure {
