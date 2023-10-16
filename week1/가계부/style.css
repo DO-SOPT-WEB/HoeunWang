@@ -1,0 +1,193 @@
+@font-face {
+  font-family: "TheJamsil5Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+* {
+  margin: 0em;
+  padding: 0em;
+  font-family: "TheJamsil5Bold";
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 375px;
+  height: 100vh;
+}
+header {
+  display: flex;
+  justify-content: center;
+  background-color: #ffc0cb;
+  font-size: xx-large;
+  width: 100%;
+  box-shadow: 0em 0.05em 0em 0em #666;
+}
+.income {
+  display: flex;
+  color: blue;
+}
+.expenditure {
+  display: flex;
+  color: red;
+}
+.seperate-line {
+  border-top: 0.2em solid #bfbfbf;
+  margin: 0em;
+  width: 100%;
+}
+.delete-button {
+  width: 1.3rem;
+  height: 1.3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding-left: 3em;
+}
+.move-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 2rem;
+  border-radius: 1em;
+  background-color: #ff8498;
+  border: none;
+}
+.cost-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 10em;
+  width: fit-content;
+  padding: 0 0.2em;
+  margin: 0 0.5em;
+}
+
+/*checkbox*/
+.checkbox-wrapper {
+  display: flex;
+  gap: 0.3em;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[id="checkbox-income"] + label,
+input[id="checkbox-expenditure"] + label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 5rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff8498;
+  border-radius: 3em;
+  width: 5rem;
+  height: 2rem;
+
+  cursor: pointer;
+}
+input[id="checkbox-income"]:checked + label,
+input[id="checkbox-expenditure"]:checked + label {
+  background-color: #f9536f;
+}
+
+/*내 지출 상단부분*/
+#my-assets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0em 0.08em 0em 0em#666;
+  width: -webkit-fill-available;
+  padding: 4% 0% 8% 0%;
+}
+#my-assets .my-assets-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 0.3em solid black;
+  border-radius: 0.5em;
+  padding: 4% 20%;
+  gap: 0.8em;
+
+  background-color: #ffc0cb;
+}
+
+#my-assets .title {
+  font-size: large;
+}
+#my-assets .my-cost {
+  font-size: xx-large;
+}
+#my-assets .spent-wrapper {
+  display: flex;
+  gap: 1em;
+}
+
+/*날짜 section*/
+#day {
+  display: flex;
+  justify-content: space-around;
+  padding: 4%;
+}
+
+/*checkbox section*/
+#checkbox {
+  display: flex;
+  justify-content: space-between;
+  padding: 3% 3%;
+  width: -webkit-fill-available;
+}
+
+/*지출 내역 리스트*/
+#lists-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  overflow-y: scroll;
+  width: -webkit-fill-available;
+  padding: 3% 0%;
+}
+#lists-wrapper .list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  background-color: #ffc0cb;
+  border-radius: 0.5em;
+  margin: 0.1%;
+  padding: 5% 5%;
+}
+#lists-wrapper .list .category {
+  display: flex;
+  width: 5em;
+}
+#lists-wrapper .list .name {
+  display: block;
+  width: 10em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#list-wrapper .list .income,
+#list-wrapper .list .expenditure {
+  display: flex;
+  flex-direction: flex-end;
+}
