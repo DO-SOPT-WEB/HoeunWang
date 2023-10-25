@@ -43,20 +43,23 @@ a {
 .title {
   background-color: #bacec1;
   color: #1d3124;
-  font-size: x-large;
   margin: 1.5em 0em;
   padding-left: 2em;
   position: sticky;
   top: 0em;
   z-index: 1;
 }
+.main-title {
+  display: flex;
+  justify-content: center;
+  color: #1d3124;
+  margin: 1em 0em;
+}
 
 /*header*/
 header {
   display: flex;
-  justify-content: center;
   color: #1d3124;
-  font-size: xx-large;
   margin: 1em 0em;
 }
 
