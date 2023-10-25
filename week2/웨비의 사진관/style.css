@@ -103,6 +103,12 @@ nav .summary a:hover {
   color: #e59560;
   text-decoration: underline;
 }
+ul {
+  list-style: none;
+}
+li {
+  display: inline-block;
+}
 
 /*section1*/
 #spring .gallery {
