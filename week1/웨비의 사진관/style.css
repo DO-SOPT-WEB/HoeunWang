@@ -1,0 +1,225 @@
+@font-face {
+  font-family: "KimjungchulMyungjo-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/KimjungchulMyungjo-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+* {
+  margin: 0em;
+  padding: 0em;
+  font-family: "KimjungchulMyungjo-Bold";
+}
+body {
+  background-color: #f6f4e8;
+  min-width: 375px;
+}
+img {
+  object-fit: cover;
+  transform: scale(1);
+  transition: 0.5s;
+  box-shadow: 0.2em 0.2em 0.2em#666;
+}
+img:hover {
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+a {
+  text-decoration: none;
+}
+.seperate-line {
+  border-top: 0.2em solid #1d3124;
+  margin: 2rem auto;
+  width: 40%;
+  height: 0px;
+}
+.seperate-line:after {
+  content: "◆";
+  position: relative;
+  top: -0.8rem;
+  left: calc(50% - 0.8em);
+  color: #1d3124;
+}
+.title {
+  background-color: #bacec1;
+  color: #1d3124;
+  margin: 1.5em 0em;
+  padding-left: 2em;
+  position: sticky;
+  top: 0em;
+  z-index: 1;
+}
+.main-title {
+  display: flex;
+  justify-content: center;
+  color: #1d3124;
+  margin: 1em 0em;
+}
+
+/*header*/
+header {
+  display: flex;
+  color: #1d3124;
+  margin: 1em 0em;
+}
+
+/*preview*/
+#preview {
+  display: flex;
+  overflow-x: scroll;
+  padding-bottom: 1em;
+}
+#preview .gallery {
+  display: flex;
+  margin: 0em 1em;
+}
+#preview::-webkit-scrollbar {
+  height: 0.8em;
+}
+
+#preview::-webkit-scrollbar-thumb {
+  background: #bacec1;
+  border-radius: 1em;
+}
+
+#preview img {
+  height: 15em;
+  margin: 0em 0.5em;
+}
+
+/*nav*/
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #e59560;
+  margin: 1em 0em;
+}
+nav span {
+  margin-bottom: 1em;
+}
+nav .summary a {
+  color: #1d3124;
+}
+nav .summary a:hover {
+  cursor: pointer;
+  color: #e59560;
+  text-decoration: underline;
+}
+ul {
+  list-style: none;
+}
+li {
+  display: inline-block;
+}
+
+/*section1*/
+#spring .gallery {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: space-around;
+  margin: 0em 4em;
+}
+
+#spring .gallery img {
+  width: 16em;
+  height: 16em;
+  margin: 1em 0em;
+}
+
+/*section2,section4*/
+#summer .gallery,
+#winter .gallery {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0em 7em;
+}
+#summer .gallery img,
+#winter .gallery img {
+  margin: 1em;
+}
+
+#summer .gallery .left,
+#winter .gallery .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#summer .gallery .right,
+#winter .gallery .left {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+}
+#summer .gallery .left img,
+#winter .gallery .right img {
+  width: 30em;
+  height: 30em;
+}
+#summer .gallery .right img,
+#winter .gallery .left img {
+  width: 14em;
+  height: 14em;
+}
+
+/*section3*/
+#autumn .gallery {
+  display: grid;
+  grid-template-rows: repeat(4, 8rem);
+  grid-template-columns: repeat(4, 13rem);
+  gap: 1.5rem;
+  margin: 0em 11em;
+}
+#autumn .gallery img {
+  width: 100%;
+  height: 100%;
+}
+
+#autumn .gallery img:first-child {
+  grid-row: 1/2;
+  grid-column: 1/3;
+}
+#autumn .gallery img:nth-child(2) {
+  grid-row: 2/3;
+  grid-column: 1/3;
+}
+#autumn .gallery img:nth-child(3) {
+  grid-row: 1/3;
+  grid-column: 3/5;
+}
+#autumn .gallery img:nth-child(4) {
+  grid-row: 3/5;
+  grid-column: 1/4;
+}
+#autumn .gallery img:nth-child(5) {
+  grid-row: 3/5;
+  grid-column: 4/5;
+}
+
+/*footer*/
+footer {
+  display: flex;
+  justify-content: center;
+  margin: 5rem 5rem 2rem 5rem;
+  background-color: #e59560;
+  color: #1d3124;
+  border-radius: 1em;
+  font-size: large;
+}
+
+/*top button*/
+#top-button {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+}
+#top-button img {
+  width: 3em;
+  height: 3em;
+  object-fit: fill;
+  box-shadow: none;
+}
