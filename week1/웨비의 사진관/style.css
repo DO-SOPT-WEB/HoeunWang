@@ -29,14 +29,14 @@ a {
 }
 .seperate-line {
   border-top: 0.2em solid #1d3124;
-  margin: 2em auto;
+  margin: 2rem auto;
   width: 40%;
   height: 0px;
 }
 .seperate-line:after {
   content: "◆";
   position: relative;
-  top: -0.8em;
+  top: -0.8rem;
   left: calc(50% - 0.8em);
   color: #1d3124;
 }
