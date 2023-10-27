@@ -1,5 +1,5 @@
-import { HISTORY_LIST, INIT_BALANCE } from "./constants/COST";
-
+import { HISTORY_LIST } from "./constants/HISTORY_LIST";
+export const INIT_BALANCE = 0;
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
@@ -144,7 +144,10 @@ function setupEventListeners() {
     button.addEventListener("click", closeModal);
   });
 
-  addButton.addEventListener("click", openModal);
+  addButton.addEventListener("click", () => {
+    console.log("add-button이 클릭되었습니다."); // 클릭되었을 때 로그 출력
+    openModal();
+  });
 
   deleteButtons.forEach((button) => {
     button.addEventListener("click", (event) => {

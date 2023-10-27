@@ -1,4 +1,3 @@
-export const INIT_BALANCE = 0;
 export const HISTORY_LIST = [
   {
     index: 0,
