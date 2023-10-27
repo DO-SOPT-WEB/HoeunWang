@@ -60,3 +60,9 @@ function filterHistoryList() {
 
   renderHistoryList(filteredHistory);
 }
+function deleteHistoryItem(index) {
+  HISTORY_LIST.splice(index, 1);
+  renderHistoryList(HISTORY_LIST);
+  renderTotalIncomeAndExpense();
+  renderAssets();
+}
