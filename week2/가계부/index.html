@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>왕호은 가계부</title>
-    <script type="module" src="./constants/HISTORY_LIST.js"></script>
   </head>
   <body>
     <header><h1>호은이의 가계부</h1></header>
@@ -16,11 +15,11 @@
         <div class="spent-wrapper">
           <div class="income">
             <div class="cost-icon">+</div>
-            <span>0</span>
+            <span class="total-income">0</span>
           </div>
           <div class="expenditure">
             <div class="cost-icon">-</div>
-            <span>0</span>
+            <span class="total-expense">0</span>
           </div>
         </div>
       </div>
@@ -38,31 +37,9 @@
         <label for="checkbox-expenditure">지출</label>
       </div>
     </section>
-    <div class="seperate-line"></div>
+    <div class="separate-line"></div>
     <section id="lists-wrapper"></section>
-    <footer><button class="add" id="add-button">+</button></footer>
-    <div id="modal" class="modal" style="display: none">
-      <div class="modal-content">
-        <span class="close" id="close-button">&times;</span>
-        <h2>내역 추가</h2>
-        <button id="income-btn" class="modal-btn active">수입</button>
-        <button id="expenditure-btn" class="modal-btn">지출</button>
-        <select id="category" class="modal-select"></select>
-        <input
-          type="number"
-          id="amount"
-          class="modal-input"
-          placeholder="금액"
-        />
-        <input
-          type="text"
-          id="description"
-          class="modal-input"
-          placeholder="내용"
-        />
-        <button id="save" class="modal-btn">저장하기</button>
-        <button class="modal-btn close">닫기</button>
-      </div>
-    </div>
+    <footer><button class="add">+</button></footer>
   </body>
+  <script type="module" src="index.js"></script>
 </html>
