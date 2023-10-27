@@ -1,5 +1,8 @@
 import { HISTORY_LIST, INIT_BALANCE } from "./constants/COST";
 
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => document.querySelectorAll(selector);
+
 window.addEventListener("DOMContentLoaded", () => {
   renderInitialData(); // 초기 데이터 렌더링을 위한 함수 호출
   setupEventListeners();
@@ -11,10 +14,17 @@ function renderInitialData() {
   renderHistoryList(HISTORY_LIST);
 }
 
+//나의 자산 업데이트
 function renderAssets() {
-  const balanceElement = document.querySelector(".my-cost");
-  balanceElement.textContent = INIT_BALANCE;
+  const balanceElement = $(".my-cost");
+  const balance = HISTORY_LIST.reduce(
+    (total, item) => total + item.amount,
+    INIT_BALANCE
+  );
+  balanceElement.textContent = balance;
 }
+
+//내역 리스트 업데이트
 function renderHistoryList(historyList) {
   const listsWrapper = document.getElementById("lists-wrapper");
   listsWrapper.innerHTML = "";
@@ -32,6 +42,7 @@ function renderHistoryList(historyList) {
   });
 }
 
+//총수입, 총지출 업데이트
 function renderTotalIncomeAndExpense() {
   const totalIncome = HISTORY_LIST.filter(
     (item) => item.type === "수입"
@@ -41,13 +52,14 @@ function renderTotalIncomeAndExpense() {
     (item) => item.type === "지출"
   ).reduce((total, item) => total + item.amount, 0);
 
-  const incomeElement = document.querySelector(".income span");
-  const expenditureElement = document.querySelector(".expenditure span");
+  const incomeElement = $(".income span");
+  const expenditureElement = $(".expenditure span");
 
   incomeElement.textContent = totalIncome;
   expenditureElement.textContent = totalExpense;
 }
 
+//내역 필터링
 function filterHistoryList() {
   const incomeCheckbox = document.getElementById("checkbox-income");
   const expenditureCheckbox = document.getElementById("checkbox-expenditure");
@@ -64,6 +76,7 @@ function filterHistoryList() {
 
   renderHistoryList(filteredHistory);
 }
+//내역 삭제
 function deleteHistoryItem(index) {
   HISTORY_LIST.splice(index, 1);
   renderHistoryList(HISTORY_LIST);
@@ -131,6 +144,8 @@ function saveNewItem() {
   closeModal();
   alert("저장되었습니다.");
 }
+
+//이벤트 리스너
 function setupEventListeners() {
   const incomeButton = document.getElementById("income-btn");
   const expenditureButton = document.getElementById("expenditure-btn");
