@@ -122,10 +122,44 @@ li {
   margin: 0em 4em;
 }
 
-#spring .gallery img {
+.images-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.images-wrapper img {
   width: 16em;
   height: 16em;
-  margin: 1em 0em;
+  object-fit: cover;
+  flex-grow: 1;
+  margin: 0.5rem 0rem;
+  transition: filter 0.5s;
+}
+
+.images-wrapper:hover img {
+  filter: brightness(0.7);
+}
+
+.images__description {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+.images-wrapper:hover .images__description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.description__title {
+  font-size: large;
+}
+
+.description__detail {
+  font-size: small;
 }
 
 /*section2,section4*/
