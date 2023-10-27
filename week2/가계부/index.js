@@ -1,11 +1,15 @@
 import { HISTORY_LIST, INIT_BALANCE } from "./constants/COST";
 
 window.addEventListener("DOMContentLoaded", () => {
+  renderInitialData(); // 초기 데이터 렌더링을 위한 함수 호출
+  setupEventListeners();
+});
+
+function renderInitialData() {
   renderAssets();
   renderTotalIncomeAndExpense();
   renderHistoryList(HISTORY_LIST);
-  setupEventListeners();
-});
+}
 
 function renderAssets() {
   const balanceElement = document.querySelector(".my-cost");
@@ -126,4 +130,47 @@ function saveNewItem() {
   renderAssets();
   closeModal();
   alert("저장되었습니다.");
+}
+function setupEventListeners() {
+  const incomeButton = document.getElementById("income-btn");
+  const expenditureButton = document.getElementById("expenditure-btn");
+  const saveButton = document.getElementById("save");
+  const closeButton = document.querySelectorAll(".close");
+  const addButton = document.getElementById("add-button");
+  const deleteButtons = document.querySelectorAll(".delete");
+
+  incomeButton.addEventListener("click", () => {
+    incomeButton.classList.add("active");
+    expenditureButton.classList.remove("active");
+  });
+
+  expenditureButton.addEventListener("click", () => {
+    expenditureButton.classList.add("active");
+    incomeButton.classList.remove("active");
+  });
+
+  saveButton.addEventListener("click", saveNewItem);
+
+  closeButton.forEach((button) => {
+    button.addEventListener("click", closeModal);
+  });
+
+  addButton.addEventListener("click", openModal);
+
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const index = event.target.getAttribute("data-index");
+      deleteHistoryItem(index);
+    });
+  });
+
+  document
+    .getElementById("category")
+    .addEventListener("change", filterHistoryList);
+  document
+    .getElementById("checkbox-income")
+    .addEventListener("change", filterHistoryList);
+  document
+    .getElementById("checkbox-expenditure")
+    .addEventListener("change", filterHistoryList);
 }
