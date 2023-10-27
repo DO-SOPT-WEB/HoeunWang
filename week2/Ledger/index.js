@@ -64,10 +64,10 @@ function renderAssets() {
   const balanceElement = $(".my-cost");
   const totalIncome = HISTORY_LIST.filter(
     (item) => item.type === "수입"
-  ).reduce((total, item) => total + item.amount, 0);
+  ).reduce((total, item) => total + item.amount, INIT_BALANCE);
   const totalExpense = HISTORY_LIST.filter(
     (item) => item.type === "지출"
-  ).reduce((total, item) => total + item.amount, 0);
+  ).reduce((total, item) => total + item.amount, INIT_BALANCE);
   const balance = totalIncome - totalExpense;
   balanceElement.textContent = balance;
 }
@@ -94,11 +94,11 @@ function renderHistoryList(historyList) {
 function renderTotalIncomeAndExpense() {
   const totalIncome = HISTORY_LIST.filter(
     (item) => item.type === "수입"
-  ).reduce((total, item) => total + item.amount, 0);
+  ).reduce((total, item) => total + item.amount, INIT_BALANCE);
 
   const totalExpense = HISTORY_LIST.filter(
     (item) => item.type === "지출"
-  ).reduce((total, item) => total + item.amount, 0);
+  ).reduce((total, item) => total + item.amount, INIT_BALANCE);
 
   const incomeElement = $(".income span");
   const expenditureElement = $(".expenditure span");
