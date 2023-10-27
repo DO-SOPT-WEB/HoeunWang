@@ -44,10 +44,13 @@ window.addEventListener("DOMContentLoaded", () => {
 //나의 자산 업데이트
 function renderAssets() {
   const balanceElement = $(".my-cost");
-  const balance = HISTORY_LIST.reduce(
-    (total, item) => total + item.amount,
-    INIT_BALANCE
-  );
+  const totalIncome = HISTORY_LIST.filter(
+    (item) => item.type === "수입"
+  ).reduce((total, item) => total + item.amount, 0);
+  const totalExpense = HISTORY_LIST.filter(
+    (item) => item.type === "지출"
+  ).reduce((total, item) => total + item.amount, 0);
+  const balance = totalIncome - totalExpense;
   balanceElement.textContent = balance;
 }
 
@@ -88,14 +91,18 @@ function renderTotalIncomeAndExpense() {
 
 //내역 필터링
 function filterHistoryList() {
-  const incomeCheckbox = $(".checkbox-income");
-  const expenditureCheckbox = $(".checkbox-expenditure");
+  const incomeCheckbox = document.getElementById("checkbox-income");
+  const expenditureCheckbox = document.getElementById("checkbox-expenditure");
+
+  const showIncome = incomeCheckbox.checked;
+  const showExpenditure = expenditureCheckbox.checked;
+
   const filteredHistory = HISTORY_LIST.filter((item) => {
-    if (incomeCheckbox.checked && expenditureCheckbox.checked) {
+    if (showIncome && showExpenditure) {
       return true;
-    } else if (incomeCheckbox.checked) {
+    } else if (showIncome) {
       return item.type === "수입";
-    } else if (expenditureCheckbox.checked) {
+    } else if (showExpenditure) {
       return item.type === "지출";
     }
     return false;
