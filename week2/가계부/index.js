@@ -27,3 +27,19 @@ function renderHistoryList(historyList) {
     listsWrapper.appendChild(listItem);
   });
 }
+
+function renderTotalIncomeAndExpense() {
+  const totalIncome = HISTORY_LIST.filter(
+    (item) => item.type === "수입"
+  ).reduce((total, item) => total + item.amount, 0);
+
+  const totalExpense = HISTORY_LIST.filter(
+    (item) => item.type === "지출"
+  ).reduce((total, item) => total + item.amount, 0);
+
+  const incomeElement = document.querySelector(".income span");
+  const expenditureElement = document.querySelector(".expenditure span");
+
+  incomeElement.textContent = totalIncome;
+  expenditureElement.textContent = totalExpense;
+}
