@@ -246,7 +246,7 @@ footer {
 }
 
 /*top button*/
-#top-button {
+.top-button {
   position: fixed;
   bottom: 1em;
   right: 1em;
@@ -254,12 +254,12 @@ footer {
   opacity: 0;
   transition: all 200ms ease-in-out;
 }
-#top-button img {
+.top-button img {
   width: 3em;
   height: 3em;
   object-fit: fill;
   box-shadow: none;
 }
-#top-button:hover {
+.top-button:hover {
   cursor: pointer;
 }

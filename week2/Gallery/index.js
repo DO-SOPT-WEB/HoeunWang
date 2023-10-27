@@ -15,7 +15,7 @@ imagesWrappers.forEach((image) => {
   });
 });
 
-const topBtn = $("#top-button");
+const topBtn = $(".top-button");
 const pageHeight = window.innerHeight;
 
 document.addEventListener("scroll", () => {
