@@ -43,3 +43,20 @@ function renderTotalIncomeAndExpense() {
   incomeElement.textContent = totalIncome;
   expenditureElement.textContent = totalExpense;
 }
+
+function filterHistoryList() {
+  const incomeCheckbox = document.getElementById("checkbox-income");
+  const expenditureCheckbox = document.getElementById("checkbox-expenditure");
+  const filteredHistory = HISTORY_LIST.filter((item) => {
+    if (incomeCheckbox.checked && expenditureCheckbox.checked) {
+      return true;
+    } else if (incomeCheckbox.checked) {
+      return item.type === "수입";
+    } else if (expenditureCheckbox.checked) {
+      return item.type === "지출";
+    }
+    return false;
+  });
+
+  renderHistoryList(filteredHistory);
+}
