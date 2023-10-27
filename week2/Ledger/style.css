@@ -154,7 +154,7 @@ input[id="checkbox-expenditure"]:checked + label {
 }
 
 /*지출 내역 리스트*/
-#lists-wrapper {
+.lists-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -164,7 +164,7 @@ input[id="checkbox-expenditure"]:checked + label {
   width: 100%;
   padding: 3% 0%;
 }
-#lists-wrapper .list {
+.lists-wrapper .list {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -174,19 +174,19 @@ input[id="checkbox-expenditure"]:checked + label {
   margin: 0.1%;
   padding: 5% 5%;
 }
-#lists-wrapper .list .category {
+.lists-wrapper .list .category {
   display: flex;
   width: 5em;
 }
-#lists-wrapper .list .name {
+.lists-wrapper .list .name {
   display: block;
   width: 10em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-#list-wrapper .list .income,
-#list-wrapper .list .expenditure {
+.list-wrapper .list .income,
+.list-wrapper .list .expenditure {
   display: flex;
   flex-direction: flex-end;
 }

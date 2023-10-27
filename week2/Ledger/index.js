@@ -1,19 +1,45 @@
-import { HISTORY_LIST } from "./constants/HISTORY_LIST";
+const HISTORY_LIST = [
+  {
+    index: 0,
+    category: "식비",
+    name: "버거킹 문정역점",
+    amount: 10800,
+    type: "지출",
+  },
+  {
+    index: 1,
+    category: "취미",
+    name: "포토그레이 신촌점",
+    amount: 5000,
+    type: "지출",
+  },
+  {
+    index: 2,
+    category: "월급",
+    name: "이번달 과외비",
+    amount: 300000,
+    type: "수입",
+  },
+  {
+    index: 3,
+    category: "쇼핑",
+    name: "겨울옷",
+    amount: 30000,
+    type: "지출",
+  },
+];
+
 const INIT_BALANCE = 0;
 
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
 window.addEventListener("DOMContentLoaded", () => {
-  renderInitialData(); // 초기 데이터 렌더링을 위한 함수 호출
-  setupEventListeners();
-});
-
-function renderInitialData() {
   renderAssets();
   renderTotalIncomeAndExpense();
   renderHistoryList(HISTORY_LIST);
-}
+  setupEventListeners();
+});
 
 //나의 자산 업데이트
 function renderAssets() {
@@ -37,7 +63,7 @@ function renderHistoryList(historyList) {
             <div class="category">${item.category}</div>
             <div class="name">${item.name}</div>
             <div class="amount">${item.amount}</div>
-            <button class="delete" data-index="${index}">X</button>
+            <button class="delete-button" data-index="${index}">X</button>
         `;
     listsWrapper.appendChild(listItem);
   });
@@ -125,9 +151,9 @@ function setupEventListeners() {
   const incomeButton = $(".income");
   const expenditureButton = $(".expenditure");
   const saveButton = $(".save");
-  const closeButton = $(".close");
+  const closeButton = $$(".close");
   const addButton = $(".add-button");
-  const deleteButtons = $(".delete");
+  const deleteButtons = $$(".delete");
 
   incomeButton.addEventListener("click", () => {
     incomeButton.classList.add("active");
@@ -146,7 +172,7 @@ function setupEventListeners() {
   });
 
   addButton.addEventListener("click", () => {
-    console.log("add-button이 클릭되었습니다."); // 클릭되었을 때 로그 출력
+    // 클릭되었을 때 로그 출력
     openModal();
   });
 
