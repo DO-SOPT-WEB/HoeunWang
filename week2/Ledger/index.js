@@ -1,3 +1,21 @@
+export const CATEGORY = [
+  {
+    category: "식비",
+    type: "지출",
+  },
+  {
+    category: "취미",
+    type: "지출",
+  },
+  {
+    category: "월급",
+    type: "수입",
+  },
+  {
+    category: "용돈",
+    type: "수입",
+  },
+];
 const HISTORY_LIST = [
   {
     index: 0,
@@ -120,7 +138,8 @@ function deleteHistoryItem(index) {
 // 모달 열기
 function openModal() {
   const modal = $(".modal-container");
-  modal.style.display = "block";
+  modal.classList.add("open");
+  categoryOptions();
 }
 // 모달 닫기
 function closeModal() {
@@ -128,11 +147,54 @@ function closeModal() {
   modal.style.display = "none";
 }
 
+const modalIncomeCheckbox = $("#modalIncome");
+const modalExpenseCheckbox = $("#modalExpense");
+
+modalIncomeCheckbox.addEventListener("change", () => {
+  if (modalIncomeCheckbox.checked) {
+    modalExpenseCheckbox.checked = false;
+  }
+
+  categoryOptions();
+});
+
+modalExpenseCheckbox.addEventListener("change", () => {
+  if (modalExpenseCheckbox.checked) {
+    modalIncomeCheckbox.checked = false;
+  }
+
+  categoryOptions();
+});
+
+const modalCategory = $("#category");
+
+function categoryOptions() {
+  modalCategory.innerHTML = "";
+
+  const selectedCategory = modalIncomeCheckbox.checked
+    ? "수입"
+    : modalExpenseCheckbox.checked
+    ? "지출"
+    : "null";
+
+  if (selectedCategory) {
+    const filteredCategoryOptions = CATEGORY.filter(
+      (item) => item.type === selectedCategory
+    );
+    filteredCategoryOptions.forEach((optionItem) => {
+      const option = document.createElement("option");
+      option.value = optionItem.category;
+      option.text = optionItem.category;
+      modalCategory.appendChild(option);
+    });
+  }
+}
+
 function saveNewItem() {
-  const type = $("input[name='modal-type']:checked").value;
-  const category = $$(".category").value;
-  const amount = parseInt($$(".amount").value, 10);
-  const description = $$(".subject").value;
+  const type = $("#modalIncome").checked ? "수입" : "지출";
+  const category = $("#category").value;
+  const amount = parseInt($("#amount").value, 10);
+  const description = $("#subject").value;
 
   if (!category || isNaN(amount) || !description) {
     alert("모든 필드를 작성해주세요.");
