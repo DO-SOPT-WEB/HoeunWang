@@ -17,12 +17,11 @@ function renderHistoryList(historyList) {
 
   historyList.forEach((item, index) => {
     const listItem = document.createElement("div");
-    listItem.classList.add("history-item");
+    listItem.classList.add("list");
     listItem.innerHTML = `
-        <div class="item-type">${item.type}</div>
-        <div class="item-category">${item.category}</div>
-        <div class="item-amount">${item.amount}원</div>
-        <div class="item-description">${item.description}</div>
+        <div class="category">${item.category}</div>
+        <div class="name">${item.name}</div>
+        <div class="amount">${item.amount}</div>
         <button class="delete" data-index="${index}">X</button>
       `;
     listsWrapper.appendChild(listItem);
