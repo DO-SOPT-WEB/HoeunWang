@@ -222,7 +222,7 @@ function setupEventListeners() {
   const saveButton = $(".save");
   const closeButton = $$(".close");
   const addButton = $(".add-button");
-  const deleteButtons = $$(".delete");
+  const deleteButtons = $$(".delete-button");
 
   incomeButton.addEventListener("click", () => {
     incomeButton.classList.add("active");
