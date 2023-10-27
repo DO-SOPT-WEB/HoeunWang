@@ -1,5 +1,6 @@
 import { HISTORY_LIST } from "./constants/HISTORY_LIST";
-export const INIT_BALANCE = 0;
+const INIT_BALANCE = 0;
+
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => document.querySelectorAll(selector);
 
@@ -26,7 +27,7 @@ function renderAssets() {
 
 //내역 리스트 업데이트
 function renderHistoryList(historyList) {
-  const listsWrapper = document.getElementById("lists-wrapper");
+  const listsWrapper = $(".lists-wrapper");
   listsWrapper.innerHTML = "";
 
   historyList.forEach((item, index) => {
@@ -61,8 +62,8 @@ function renderTotalIncomeAndExpense() {
 
 //내역 필터링
 function filterHistoryList() {
-  const incomeCheckbox = document.getElementById("checkbox-income");
-  const expenditureCheckbox = document.getElementById("checkbox-expenditure");
+  const incomeCheckbox = $(".checkbox-income");
+  const expenditureCheckbox = $(".checkbox-expenditure");
   const filteredHistory = HISTORY_LIST.filter((item) => {
     if (incomeCheckbox.checked && expenditureCheckbox.checked) {
       return true;
@@ -96,9 +97,9 @@ function closeModal() {
 
 function saveNewItem() {
   const type = $("input[name='modal-type']:checked").value;
-  const category = document.getElementById("category").value;
-  const amount = parseInt(document.getElementById("amount").value, 10);
-  const description = document.getElementById("subject").value;
+  const category = $$(".category").value;
+  const amount = parseInt($$(".amount").value, 10);
+  const description = $$(".subject").value;
 
   if (!category || isNaN(amount) || !description) {
     alert("모든 필드를 작성해주세요.");
@@ -121,12 +122,12 @@ function saveNewItem() {
 }
 
 function setupEventListeners() {
-  const incomeButton = document.getElementById("income-btn");
-  const expenditureButton = document.getElementById("expenditure-btn");
-  const saveButton = document.getElementById("save");
-  const closeButton = $$(".close");
-  const addButton = document.getElementById("add-button");
-  const deleteButtons = $$(".delete");
+  const incomeButton = $(".income");
+  const expenditureButton = $(".expenditure");
+  const saveButton = $(".save");
+  const closeButton = $(".close");
+  const addButton = $(".add-button");
+  const deleteButtons = $(".delete");
 
   incomeButton.addEventListener("click", () => {
     incomeButton.classList.add("active");
