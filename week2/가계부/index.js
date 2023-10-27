@@ -33,11 +33,11 @@ function renderHistoryList(historyList) {
     const listItem = document.createElement("div");
     listItem.classList.add("list");
     listItem.innerHTML = `
-        <div class="category">${item.category}</div>
-        <div class="name">${item.name}</div>
-        <div class="amount">${item.amount}</div>
-        <button class="delete" data-index="${index}">X</button>
-      `;
+            <div class="category">${item.category}</div>
+            <div class="name">${item.name}</div>
+            <div class="amount">${item.amount}</div>
+            <button class="delete" data-index="${index}">X</button>
+        `;
     listsWrapper.appendChild(listItem);
   });
 }

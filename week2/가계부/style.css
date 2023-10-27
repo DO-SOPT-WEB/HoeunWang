@@ -51,7 +51,7 @@ header {
   border: none;
   cursor: pointer;
 }
-.add {
+.add-button {
   display: flex;
   justify-content: center;
   align-items: center;
