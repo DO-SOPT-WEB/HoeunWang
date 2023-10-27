@@ -85,45 +85,20 @@ function deleteHistoryItem(index) {
 }
 // 모달 열기
 function openModal() {
-  const modal = document.getElementById("modal");
+  const modal = $(".modal-container");
   modal.style.display = "block";
-
-  // 수입/지출 버튼에 따라 카테고리를 동적으로 변경
-  const incomeButton = document.getElementById("income-btn");
-  const expenditureButton = document.getElementById("expenditure-btn");
-  const categorySelect = document.getElementById("category");
-
-  incomeButton.addEventListener("click", () => {
-    incomeButton.classList.add("active");
-    expenditureButton.classList.remove("active");
-    // '수입' 카테고리 설정
-    categorySelect.innerHTML = `
-        <option value="월급">월급</option>
-        <option value="용돈">용돈</option>
-      `;
-  });
-
-  expenditureButton.addEventListener("click", () => {
-    expenditureButton.classList.add("active");
-    incomeButton.classList.remove("active");
-    // '지출' 카테고리 설정
-    categorySelect.innerHTML = `
-        <option value="식비">식비</option>
-        <option value="쇼핑">쇼핑</option>
-      `;
-  });
 }
-
 // 모달 닫기
 function closeModal() {
-  const modal = document.getElementById("modal");
+  const modal = $(".modal-container");
   modal.style.display = "none";
 }
+
 function saveNewItem() {
-  const type = document.querySelector(".modal-btn.active").textContent;
+  const type = $("input[name='modal-type']:checked").value;
   const category = document.getElementById("category").value;
   const amount = parseInt(document.getElementById("amount").value, 10);
-  const description = document.getElementById("description").value;
+  const description = document.getElementById("subject").value;
 
   if (!category || isNaN(amount) || !description) {
     alert("모든 필드를 작성해주세요.");
@@ -134,7 +109,7 @@ function saveNewItem() {
     type,
     category,
     amount,
-    description,
+    name: description,
   };
 
   HISTORY_LIST.push(newItem);
@@ -145,14 +120,13 @@ function saveNewItem() {
   alert("저장되었습니다.");
 }
 
-//이벤트 리스너
 function setupEventListeners() {
   const incomeButton = document.getElementById("income-btn");
   const expenditureButton = document.getElementById("expenditure-btn");
   const saveButton = document.getElementById("save");
-  const closeButton = document.querySelectorAll(".close");
+  const closeButton = $$(".close");
   const addButton = document.getElementById("add-button");
-  const deleteButtons = document.querySelectorAll(".delete");
+  const deleteButtons = $$(".delete");
 
   incomeButton.addEventListener("click", () => {
     incomeButton.classList.add("active");

@@ -11,15 +11,15 @@
     <section id="my-assets">
       <div class="my-assets-box">
         <div class="title">나의 자산</div>
-        <div class="my-cost">0</div>
+        <div class="my-cost"></div>
         <div class="spent-wrapper">
           <div class="income">
             <div class="cost-icon">+</div>
-            <span class="total-income">0</span>
+            <span class="total-income"></span>
           </div>
           <div class="expenditure">
             <div class="cost-icon">-</div>
-            <span class="total-expense">0</span>
+            <span class="total-expense"></span>
           </div>
         </div>
       </div>
@@ -39,6 +39,29 @@
     </section>
     <div class="separate-line"></div>
     <section id="lists-wrapper"></section>
+    <section class="modal-container">
+      <div class="modal-header">
+        <h2>내역 추가</h2>
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="checkbox-income" checked />
+          <label for="checkbox-income">수입</label>
+          <input type="checkbox" id="checkbox-expenditure" checked />
+          <label for="checkbox-expenditure">지출</label>
+        </div>
+      </div>
+      <div class="modal-body">
+        <label for="category">종류</label>
+        <select name="category" id="category"></select>
+        <label for="amount">금액</label>
+        <input type="text" name="amount" id="amount" />
+        <label for="subject">내용</label>
+        <input type="text" name="subject" id="subject" />
+      </div>
+      <div class="modal-footer">
+        <button class="modal-button save" type="button">저장하기</button>
+        <button class="modal-button close" type="button">닫기</button>
+      </div>
+    </section>
     <footer><button class="add-button">+</button></footer>
   </body>
   <script type="module" src="index.js"></script>
