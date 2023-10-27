@@ -250,10 +250,16 @@ footer {
   position: fixed;
   bottom: 1em;
   right: 1em;
+  z-index: 1;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
 }
 #top-button img {
   width: 3em;
   height: 3em;
   object-fit: fill;
   box-shadow: none;
+}
+#top-button:hover {
+  cursor: pointer;
 }

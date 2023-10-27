@@ -14,3 +14,10 @@ imagesWrappers.forEach((image) => {
     images__description.classList.remove("description-appear");
   });
 });
+
+const topBtn = $("#top-button");
+const pageHeight = window.innerHeight;
+
+document.addEventListener("scroll", () => {
+  topBtn.style.opacity = window.scrollY / pageHeight;
+});
