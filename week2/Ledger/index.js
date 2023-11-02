@@ -1,4 +1,4 @@
-export const CATEGORY = [
+const CATEGORY = [
   {
     category: "식비",
     type: "지출",
