@@ -139,7 +139,7 @@ li {
   filter: brightness(0.7);
 }
 
-.images__description {
+.images-description {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -149,16 +149,16 @@ li {
   text-align: center;
   z-index: 1;
 }
-.images-wrapper:hover .images__description {
+.images-wrapper:hover .images-description {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-.description__title {
+.description-title {
   font-size: large;
 }
 
-.description__detail {
+.description-detail {
   font-size: small;
 }
 
