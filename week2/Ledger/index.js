@@ -135,13 +135,13 @@ function deleteHistoryItem(index) {
   renderTotalIncomeAndExpense();
   renderAssets();
 }
-// 모달 열기
+
 function openModal() {
   const modal = $(".modal-container");
   modal.classList.add("open");
   categoryOptions();
 }
-// 모달 닫기
+
 function closeModal() {
   const modal = $(".modal-container");
   modal.style.display = "none";
