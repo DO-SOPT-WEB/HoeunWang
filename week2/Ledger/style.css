@@ -144,6 +144,9 @@ input[id="checkbox-expenditure"]:checked + label {
   justify-content: space-around;
   padding: 4%;
 }
+#day .day-text {
+  padding: 1%;
+}
 
 /*checkbox section*/
 #checkbox {
