@@ -1,9 +1,7 @@
-import Counter from "./components/Counter";
-
 function App() {
   return (
     <>
-      <Counter name={"왕호은"} />
+      <h1>초기화</h1>
     </>
   );
 }
