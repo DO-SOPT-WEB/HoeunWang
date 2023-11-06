@@ -1,5 +1,5 @@
 import Header from "../../components/Header";
-import Recommand from "../../components/Recommand";
+import Recommend from "../../components/Recommend";
 import { Container } from "./Main.style";
 
 function Main() {
@@ -7,7 +7,7 @@ function Main() {
     <>
       <Container>
         <Header />
-        <Recommand />
+        <Recommend />
       </Container>
     </>
   );

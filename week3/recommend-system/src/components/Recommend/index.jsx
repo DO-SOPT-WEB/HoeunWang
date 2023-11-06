@@ -1,4 +1,4 @@
-import { Container } from "./Recommand.style";
+import { Container } from "./Recommend.style";
 
 function Recommend() {
   return (
