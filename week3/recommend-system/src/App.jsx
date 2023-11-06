@@ -1,7 +1,9 @@
+import Main from "./pages/Main";
+
 function App() {
   return (
     <>
-      <h1>초기화</h1>
+      <Main />
     </>
   );
 }
