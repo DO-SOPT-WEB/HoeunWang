@@ -3,7 +3,7 @@ import { Container } from "./Recommend.style";
 function Recommend() {
   return (
     <>
-      <Container>고르는 컨테이너입니다.</Container>
+      <Container>원하는 추천 방식을 골라줘!</Container>
     </>
   );
 }
