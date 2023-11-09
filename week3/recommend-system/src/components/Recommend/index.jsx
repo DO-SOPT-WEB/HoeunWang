@@ -1,15 +1,12 @@
-import Random from "../Random";
-import Taste from "../Taste";
+import Article from "./Article";
 import * as S from "./Recommend.style";
+import Title from "./Title";
 
 function Recommend() {
   return (
     <S.Container>
-      <S.Title>원하는 추천 방식을 골라줘!</S.Title>
-      <S.SubContainer>
-        <Taste />
-        <Random />
-      </S.SubContainer>
+      <Title />
+      <Article />
     </S.Container>
   );
 }
