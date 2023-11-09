@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import * as S from "./SelectType.style";
 
 SelectType.propTypes = {
   selectedType: PropTypes.string.isRequired,
@@ -9,22 +10,23 @@ SelectType.propTypes = {
 function SelectType({ selectedType, selectedHandler, startHandler }) {
   return (
     <>
-      {selectedType === "" || selectedType === "taste" ? (
-        <div
+      {(selectedType === "" || selectedType === "taste") && (
+        <S.SelectType
           onClick={() => {
             selectedHandler("taste");
           }}
         >
           취향
-        </div>
-      ) : (
-        <div
+        </S.SelectType>
+      )}
+      {(selectedType === "" || selectedType === "random") && (
+        <S.SelectType
           onClick={() => {
             selectedHandler("random");
           }}
         >
           랜덤
-        </div>
+        </S.SelectType>
       )}
       {selectedType !== "" && (
         <button
