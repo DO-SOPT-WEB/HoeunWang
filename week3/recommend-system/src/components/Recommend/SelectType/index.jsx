@@ -5,7 +5,7 @@ function SelectType({ selectedType, selectedHandler, startHandler }) {
   return (
     <S.Container>
       <S.Title>원하는 추천 방식을 골라줘!</S.Title>
-      <S.ContentSection>
+      <S.ContentField>
         {(selectedType === "" || selectedType === "taste") && (
           <S.SelectType
             onClick={() => {
@@ -24,9 +24,9 @@ function SelectType({ selectedType, selectedHandler, startHandler }) {
             랜덤
           </S.SelectType>
         )}
-      </S.ContentSection>
+      </S.ContentField>
       {selectedType !== "" && (
-        <S.ButtonSection>
+        <S.ButtonField>
           <S.StartButton
             onClick={() => {
               startHandler(true);
@@ -34,7 +34,7 @@ function SelectType({ selectedType, selectedHandler, startHandler }) {
           >
             Start!
           </S.StartButton>
-        </S.ButtonSection>
+        </S.ButtonField>
       )}
     </S.Container>
   );

@@ -27,7 +27,7 @@ export const IceCreamOption = {
       new: "핑크 베리 하츄핑",
     },
   },
-  others: {
+  strange: {
     chrunk: {
       old: "민트초콜릿칩",
       new: "초코야민트해",
