@@ -1,10 +1,10 @@
-import { Container } from "./Random.style";
+import * as S from "../style";
 
 function Random() {
   return (
-    <Container>
+    <S.Container>
       <p>랜덤 추천</p>
-    </Container>
+    </S.Container>
   );
 }
 

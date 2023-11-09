@@ -1,10 +1,10 @@
-import { Container } from "./Taste.style";
+import * as S from "../style";
 
 function Taste() {
   return (
-    <Container>
+    <S.Container>
       <p>취향대로 추천</p>
-    </Container>
+    </S.Container>
   );
 }
 

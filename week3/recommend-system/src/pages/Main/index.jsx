@@ -1,14 +1,14 @@
 import Header from "../../components/Header";
 import Recommend from "../../components/Recommend";
-import { Container } from "./Main.style";
+import * as S from "../style";
 
 function Main() {
   return (
     <>
-      <Container>
+      <S.Container>
         <Header />
         <Recommend />
-      </Container>
+      </S.Container>
     </>
   );
 }

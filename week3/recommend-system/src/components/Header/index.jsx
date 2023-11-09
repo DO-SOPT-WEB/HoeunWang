@@ -1,9 +1,9 @@
-import { Container } from "./Header.style";
+import * as S from "../style";
 
 function Header() {
   return (
     <>
-      <Container>헤더입니다.</Container>
+      <S.Container>헤더입니다.</S.Container>
     </>
   );
 }
