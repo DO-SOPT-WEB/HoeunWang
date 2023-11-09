@@ -30,7 +30,13 @@ function Third({ resultHandler, nthChoiceHandler }) {
         >
           이전으로
         </S.Button>
-        <S.Button>결과보기</S.Button>
+        <S.Button
+          onClick={() => {
+            nthChoiceHandler(4);
+          }}
+        >
+          결과보기
+        </S.Button>
       </S.ButtonField>
     </S.Container>
   );
