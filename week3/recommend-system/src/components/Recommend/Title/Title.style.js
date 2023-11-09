@@ -8,4 +8,5 @@ export const Title = styled.div`
   width: 50%;
   padding: 0.5% 2%;
   border-radius: 5px;
+  margin-top: 5%;
 `;

@@ -9,18 +9,10 @@ function Recommend() {
   const [isStart, setIsStart] = useState(false);
   return (
     <S.Container>
-      <Title
-        selectedType={selectedType}
-        selectedTypeHandler={(selected) => {
-          setSelectedType(selected);
-        }}
-        startHandler={() => {
-          setIsStart(true);
-        }}
-      />
+      <Title />
       <Article
         selectedType={selectedType}
-        selectedTypeHandler={(selected) => {
+        selectedHandler={(selected) => {
           setSelectedType(selected);
         }}
         isStart={isStart}

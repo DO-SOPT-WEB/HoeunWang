@@ -1,13 +1,12 @@
-import PropTypes from "prop-types";
+/* eslint-disable react/prop-types */
 
-ViewOption.propTypes = {
-  selectedHandler: PropTypes.func.isRequired,
-  startHandler: PropTypes.func.isRequired,
-};
-function ViewOption() {
+function ViewOption({ selectedHandler, startHandler }) {
+  const check = () => {
+    console.log(selectedHandler, startHandler);
+  };
   return (
     <>
-      <p>옵션들 보여주기</p>
+      <div onClick={check()}>선택지</div>
     </>
   );
 }

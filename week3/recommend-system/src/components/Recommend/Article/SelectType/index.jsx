@@ -1,43 +1,41 @@
-import PropTypes from "prop-types";
+/* eslint-disable react/prop-types */
 import * as S from "./SelectType.style";
-
-SelectType.propTypes = {
-  selectedType: PropTypes.string.isRequired,
-  selectedHandler: PropTypes.func.isRequired,
-  startHandler: PropTypes.func.isRequired,
-};
 
 function SelectType({ selectedType, selectedHandler, startHandler }) {
   return (
-    <>
-      {(selectedType === "" || selectedType === "taste") && (
-        <S.SelectType
-          onClick={() => {
-            selectedHandler("taste");
-          }}
-        >
-          취향
-        </S.SelectType>
-      )}
-      {(selectedType === "" || selectedType === "random") && (
-        <S.SelectType
-          onClick={() => {
-            selectedHandler("random");
-          }}
-        >
-          랜덤
-        </S.SelectType>
-      )}
+    <S.Container>
+      <S.ContentSection>
+        {(selectedType === "" || selectedType === "taste") && (
+          <S.SelectType
+            onClick={() => {
+              selectedHandler("taste");
+            }}
+          >
+            취향
+          </S.SelectType>
+        )}
+        {(selectedType === "" || selectedType === "random") && (
+          <S.SelectType
+            onClick={() => {
+              selectedHandler("random");
+            }}
+          >
+            랜덤
+          </S.SelectType>
+        )}
+      </S.ContentSection>
       {selectedType !== "" && (
-        <button
-          onClick={() => {
-            startHandler(true);
-          }}
-        >
-          Start!
-        </button>
+        <S.ButtonSection>
+          <S.StartButton
+            onClick={() => {
+              startHandler(true);
+            }}
+          >
+            Start!
+          </S.StartButton>
+        </S.ButtonSection>
       )}
-    </>
+    </S.Container>
   );
 }
 export default SelectType;
