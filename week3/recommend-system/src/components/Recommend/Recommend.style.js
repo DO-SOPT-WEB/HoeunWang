@@ -4,15 +4,15 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
   width: 70%;
   height: 100%;
   background-color: #ffdab9;
   margin: 5% 0;
   border-radius: 5px;
+  gap: 5%;
 `;
 
-export const Title = styled.div`
+export const Title = styled.h3`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,4 +27,5 @@ export const SubContainer = styled.div`
   justify-content: center;
   width: 50%;
   gap: 5%;
+  margin: 5%;
 `;

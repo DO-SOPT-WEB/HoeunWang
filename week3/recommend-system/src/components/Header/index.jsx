@@ -2,9 +2,9 @@ import * as S from "./Header.style";
 
 function Header() {
   return (
-    <>
-      <S.Container>헤더입니다.</S.Container>
-    </>
+    <S.Container>
+      <S.Title>🍨베스KING라빈스 31🍨</S.Title>
+    </S.Container>
   );
 }
 
