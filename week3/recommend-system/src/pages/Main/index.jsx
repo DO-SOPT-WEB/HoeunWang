@@ -1,6 +1,6 @@
 import Header from "../../components/Header";
 import Recommend from "../../components/Recommend";
-import * as S from "../style";
+import * as S from "./Main.style.js";
 
 function Main() {
   return (

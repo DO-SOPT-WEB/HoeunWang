@@ -1,4 +1,4 @@
-import * as S from "../style";
+import * as S from "./Header.style";
 
 function Header() {
   return (

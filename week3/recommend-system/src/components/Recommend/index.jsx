@@ -1,6 +1,6 @@
 import Random from "../Random";
 import Taste from "../Taste";
-import * as S from "../style";
+import * as S from "./Recommend.style";
 
 function Recommend() {
   return (
