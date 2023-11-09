@@ -4,6 +4,7 @@ import * as S from "./SelectType.style";
 function SelectType({ selectedType, selectedHandler, startHandler }) {
   return (
     <S.Container>
+      <S.Title>원하는 추천 방식을 골라줘!</S.Title>
       <S.ContentSection>
         {(selectedType === "" || selectedType === "taste") && (
           <S.SelectType

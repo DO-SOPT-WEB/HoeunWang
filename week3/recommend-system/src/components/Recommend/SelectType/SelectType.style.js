@@ -1,10 +1,21 @@
 import styled from "styled-components";
+
 export const Container = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
+  align-items: center;
+`;
+
+export const Title = styled.div`
+  display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #ffefd5;
+  width: 50%;
+  padding: 0.5% 2%;
+  border-radius: 5px;
+  margin: 5% 0;
 `;
 
 export const ContentSection = styled.div`
@@ -31,7 +42,7 @@ export const ButtonSection = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
-  margin-top: 10%;
+  margin: 5% 0;
 `;
 export const StartButton = styled.button`
   display: flex;
