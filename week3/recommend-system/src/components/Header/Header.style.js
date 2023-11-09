@@ -8,7 +8,7 @@ export const Container = styled.header`
   height: 20%;
   background-color: #ffdab9;
 `;
-export const Title = styled.h2`
+export const Title = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
