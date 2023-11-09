@@ -9,7 +9,7 @@ export const Container = styled.div`
 
 export const ContentSection = styled.div`
   display: flex;
-  width: 100%;
+  width: 80%;
   justify-content: space-around;
 `;
 

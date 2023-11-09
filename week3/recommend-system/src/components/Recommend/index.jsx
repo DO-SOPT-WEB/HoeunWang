@@ -1,26 +1,26 @@
-import Article from "./Article";
-import Title from "./Title";
+/* eslint-disable react/prop-types */
+import SelectType from "./SelectType";
+import ViewOption from "./ViewOption";
 
 import * as S from "./Recommend.style";
-import { useState } from "react";
 
-function Recommend() {
-  const [selectedType, setSelectedType] = useState("");
-  const [isStart, setIsStart] = useState(false);
+function Recommend({ selectedType, selectedHandler, isStart, startHandler }) {
   return (
-    <S.Container>
-      <Title />
-      <Article
-        selectedType={selectedType}
-        selectedHandler={(selected) => {
-          setSelectedType(selected);
-        }}
-        isStart={isStart}
-        startHandler={() => {
-          setIsStart(true);
-        }}
-      />
-    </S.Container>
+    <S.RecommendContainer>
+      {!isStart ? (
+        <SelectType
+          selectedType={selectedType}
+          selectedHandler={selectedHandler}
+          startHandler={startHandler}
+        />
+      ) : (
+        <ViewOption
+          selectedHandler={selectedHandler}
+          startHandler={startHandler}
+        />
+      )}
+    </S.RecommendContainer>
   );
 }
+
 export default Recommend;
