@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { IceCreamOption } from "../../../constants/IceCreamOption";
 import * as S from "./ViewRandom.style";
 import { useState, useEffect } from "react";

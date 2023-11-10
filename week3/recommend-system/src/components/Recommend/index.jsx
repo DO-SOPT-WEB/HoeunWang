@@ -2,10 +2,22 @@
 import SelectType from "./SelectType";
 import ViewOption from "./ViewOption";
 import ViewRandom from "./ViewRandom";
+import { useEffect, useState } from "react";
 
 import * as S from "./Recommend.style";
 
 function Recommend({ selectedType, selectedHandler, isStart, startHandler }) {
+  const [resetViewOption, setResetViewOption] = useState(false);
+
+  const handleResetViewOption = () => {
+    setResetViewOption(true);
+  };
+
+  useEffect(() => {
+    if (resetViewOption) {
+      setResetViewOption(false);
+    }
+  }, [resetViewOption]);
   return (
     <S.RecommendContainer>
       {!isStart ? (
@@ -18,6 +30,7 @@ function Recommend({ selectedType, selectedHandler, isStart, startHandler }) {
         <ViewOption
           selectedHandler={selectedHandler}
           startHandler={startHandler}
+          resetHandler={handleResetViewOption}
         />
       ) : (
         <ViewRandom />

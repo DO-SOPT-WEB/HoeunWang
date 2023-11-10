@@ -28,3 +28,17 @@ export const ContentContainer = styled.div`
   padding: 0.5% 2%;
   border-radius: 5px;
 `;
+export const ButtonField = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+`;
+export const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #bdb76b;
+  padding: 0.5% 1%;
+  border-radius: 5px;
+`;

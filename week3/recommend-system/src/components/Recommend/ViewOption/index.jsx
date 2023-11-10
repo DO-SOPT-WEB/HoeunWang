@@ -8,7 +8,7 @@ import Third from "./Third";
 import { IceCreamOption } from "../../../constants/IceCreamOption";
 import * as S from "./ViewOption.style";
 
-function ViewOption({ selectedHandler, startHandler }) {
+function ViewOption({ selectedHandler, startHandler, resetHandler }) {
   const [nthChoice, setNthChoice] = useState(1);
   const [selectedFlavorFirst, setSelectedFlavorFirst] = useState(null);
   const [selectedFlavorSecond, setSelectedFlavorSecond] = useState(null);
@@ -22,6 +22,11 @@ function ViewOption({ selectedHandler, startHandler }) {
   };
   const handleSelectThird = (flavor) => {
     setSelectedFlavorThird(flavor);
+  };
+
+  const handleRestart = () => {
+    resetHandler(); // Call the resetHandler to reset the state in the parent component
+    setNthChoice(1); // Reset nthChoice to 1 to start from the first step again
   };
 
   return (
@@ -62,6 +67,9 @@ function ViewOption({ selectedHandler, startHandler }) {
               ]
             }
           </S.ContentContainer>
+          <S.ButtonField>
+            <S.Button onClick={handleRestart}>다시하기</S.Button>
+          </S.ButtonField>
         </S.Container>
       )}
     </>
