@@ -11,7 +11,7 @@ function Third({ resultHandler, nthChoiceHandler }) {
   const [selectedOption, setSelectedOption] = useState(null);
   return (
     <S.Container>
-      <S.Title>오리지날과 신상 중 뭐를 원해?</S.Title>
+      <S.Title>오리지날 VS 신상</S.Title>
       <S.OptionContainer>
         {options.map((option) => (
           <S.Option

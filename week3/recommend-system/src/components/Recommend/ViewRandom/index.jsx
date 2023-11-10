@@ -24,7 +24,7 @@ function ViewRandom() {
     if (countdown > 1) {
       const interval = setInterval(() => {
         setCountdown((prevCountdown) => prevCountdown - 1);
-      }, 2000);
+      }, 1000);
 
       return () => {
         clearInterval(interval);
