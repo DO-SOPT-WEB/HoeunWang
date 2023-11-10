@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import SelectType from "./SelectType";
 import ViewOption from "./ViewOption";
+import ViewRandom from "./ViewRandom";
 
 import * as S from "./Recommend.style";
 
@@ -13,11 +14,13 @@ function Recommend({ selectedType, selectedHandler, isStart, startHandler }) {
           selectedHandler={selectedHandler}
           startHandler={startHandler}
         />
-      ) : (
+      ) : selectedType === "taste" ? (
         <ViewOption
           selectedHandler={selectedHandler}
           startHandler={startHandler}
         />
+      ) : (
+        <ViewRandom />
       )}
     </S.RecommendContainer>
   );
