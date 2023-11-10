@@ -122,10 +122,44 @@ li {
   margin: 0em 4em;
 }
 
-#spring .gallery img {
+.images-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.images-wrapper img {
   width: 16em;
   height: 16em;
-  margin: 1em 0em;
+  object-fit: cover;
+  flex-grow: 1;
+  margin: 0.5rem 0rem;
+  transition: filter 0.5s;
+}
+
+.images-wrapper:hover img {
+  filter: brightness(0.7);
+}
+
+.images-description {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+.images-wrapper:hover .images-description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.description-title {
+  font-size: large;
+}
+
+.description-detail {
+  font-size: small;
 }
 
 /*section2,section4*/
@@ -212,14 +246,20 @@ footer {
 }
 
 /*top button*/
-#top-button {
+.top-button {
   position: fixed;
   bottom: 1em;
   right: 1em;
+  z-index: 1;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
 }
-#top-button img {
+.top-button img {
   width: 3em;
   height: 3em;
   object-fit: fill;
   box-shadow: none;
+}
+.top-button:hover {
+  cursor: pointer;
 }

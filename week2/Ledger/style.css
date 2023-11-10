@@ -51,7 +51,7 @@ header {
   border: none;
   cursor: pointer;
 }
-.add {
+.add-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,6 +144,9 @@ input[id="checkbox-expenditure"]:checked + label {
   justify-content: space-around;
   padding: 4%;
 }
+#day .day-text {
+  padding: 1%;
+}
 
 /*checkbox section*/
 #checkbox {
@@ -154,7 +157,7 @@ input[id="checkbox-expenditure"]:checked + label {
 }
 
 /*지출 내역 리스트*/
-#lists-wrapper {
+.lists-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -164,7 +167,7 @@ input[id="checkbox-expenditure"]:checked + label {
   width: 100%;
   padding: 3% 0%;
 }
-#lists-wrapper .list {
+.lists-wrapper .list {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -174,19 +177,96 @@ input[id="checkbox-expenditure"]:checked + label {
   margin: 0.1%;
   padding: 5% 5%;
 }
-#lists-wrapper .list .category {
+.lists-wrapper .list .category {
   display: flex;
   width: 5em;
 }
-#lists-wrapper .list .name {
+.lists-wrapper .list .name {
   display: block;
   width: 10em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-#list-wrapper .list .income,
-#list-wrapper .list .expenditure {
+.list-wrapper .list .income,
+.list-wrapper .list .expenditure {
   display: flex;
   flex-direction: flex-end;
+}
+
+/* 모달 */
+.modal-container {
+  width: 100%;
+  height: 0;
+
+  background-color: #ffc0cb;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 3rem;
+  right: 0;
+  padding: 0;
+  overflow: hidden;
+
+  transition: 0.5s;
+}
+
+.modal-container.open {
+  height: 60%;
+}
+
+@keyframes animation-modal {
+  from {
+    bottom: -50%;
+    opacity: 0;
+  }
+  to {
+    top: 60%;
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  text-align: center;
+  margin: 1rem 0;
+  gap: 0rem 0rem 1rem 0rem;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  row-gap: 0.5rem;
+  padding: 0 1rem;
+  margin-bottom: 2cqh;
+}
+
+.modal-body label {
+  font-size: 1.6rem;
+}
+
+.modal-body select {
+  width: 10rem;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  color: white;
+}
+
+.modal-footer button {
+  width: 50%;
+  padding: 0.5rem;
+  font-size: 1.4rem;
+  background-color: #f9536f;
+  border-radius: 1.3rem;
+  margin: 0.2rem 0;
+  cursor: pointer;
 }
