@@ -17,3 +17,13 @@ export const Container = styled.div`
   align-items: center;
   width: 80%;
 `;
+
+export const ContentContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffefd5;
+  width: 50%;
+  padding: 0.5% 2%;
+  border-radius: 5px;
+`;

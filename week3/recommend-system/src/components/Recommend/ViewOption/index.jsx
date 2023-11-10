@@ -6,29 +6,58 @@ import First from "./First";
 import Second from "./Second";
 import Third from "./Third";
 import Result from "./Result";
-
-const components = [First, Second, Third, Result];
+import { IceCreamOption } from "../../../constants/IceCreamOption";
 
 function ViewOption({ selectedHandler, startHandler }) {
   const [nthChoice, setNthChoice] = useState(1);
-  const [result, setResult] = useState("");
+  const [selectedFlavor, setSelectedFlavor] = useState(null);
 
-  const handleSelect = (selected) => {
-    setResult((prevResult) => prevResult + selected + ".");
+  const handleSelect = (flavor) => {
+    setSelectedFlavor((prevFlavor) => {
+      const combinedFlavor = prevFlavor ? `${prevFlavor}.${flavor}` : flavor;
+      console.log(combinedFlavor);
+      console.log(IceCreamOption?.[combinedFlavor]);
+      return combinedFlavor;
+    });
+    console.log(IceCreamOption?.[selectedFlavor]);
   };
-
-  const CurrentComponent = components[nthChoice - 1];
 
   return (
     <>
-      <CurrentComponent
-        selectedHandler={selectedHandler}
-        startHandler={startHandler}
-        resultHandler={handleSelect}
-        nthChoiceHandler={(number) => {
-          setNthChoice(number);
-        }}
-      />
+      {nthChoice === 1 && (
+        <First
+          selectedHandler={selectedHandler}
+          startHandler={startHandler}
+          resultHandler={handleSelect}
+          nthChoiceHandler={(number) => {
+            setNthChoice(number);
+          }}
+        />
+      )}
+      {nthChoice === 2 && (
+        <Second
+          resultHandler={handleSelect}
+          nthChoiceHandler={(number) => {
+            setNthChoice(number);
+          }}
+        />
+      )}
+      {nthChoice === 3 && (
+        <Third
+          resultHandler={handleSelect}
+          nthChoiceHandler={(number) => {
+            setNthChoice(number);
+          }}
+        />
+      )}
+      {nthChoice === 4 && (
+        <Result
+          result={IceCreamOption?.[selectedFlavor]}
+          nthChoiceHandler={(number) => {
+            setNthChoice(number);
+          }}
+        />
+      )}
     </>
   );
 }
