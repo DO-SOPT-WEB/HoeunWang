@@ -48,6 +48,7 @@ function First({
           onClick={() => {
             nthChoiceHandler(2);
           }}
+          disabled={!selectedOption}
         >
           다음으로
         </S.Button>

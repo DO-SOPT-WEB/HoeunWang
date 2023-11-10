@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import * as S from "./Second.style";
 
 const options = [
@@ -8,6 +9,7 @@ const options = [
 ];
 
 function Second({ resultHandler, nthChoiceHandler }) {
+  const [selectedOption, setSelectedOption] = useState(null);
   return (
     <S.Container>
       <S.Title>조금 더 자세히 알려줘!</S.Title>
@@ -17,6 +19,11 @@ function Second({ resultHandler, nthChoiceHandler }) {
             key={option.value}
             onClick={() => {
               resultHandler(option.value);
+              setSelectedOption(option.value);
+            }}
+            style={{
+              backgroundColor:
+                selectedOption === option.value ? "#ffa07a" : "#ffefd5",
             }}
           >
             {option.label}
@@ -35,6 +42,7 @@ function Second({ resultHandler, nthChoiceHandler }) {
           onClick={() => {
             nthChoiceHandler(3);
           }}
+          disabled={!selectedOption}
         >
           다음으로
         </S.Button>

@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import * as S from "./Third.style";
 
 const options = [
@@ -7,6 +8,7 @@ const options = [
 ];
 
 function Third({ resultHandler, nthChoiceHandler }) {
+  const [selectedOption, setSelectedOption] = useState(null);
   return (
     <S.Container>
       <S.Title>오리지날과 신상 중 뭐를 원해?</S.Title>
@@ -16,6 +18,11 @@ function Third({ resultHandler, nthChoiceHandler }) {
             key={option.value}
             onClick={() => {
               resultHandler(option.value);
+              setSelectedOption(option.value);
+            }}
+            style={{
+              backgroundColor:
+                selectedOption === option.value ? "#ffa07a" : "#ffefd5",
             }}
           >
             {option.label}
@@ -34,6 +41,7 @@ function Third({ resultHandler, nthChoiceHandler }) {
           onClick={() => {
             nthChoiceHandler(4);
           }}
+          disabled={!selectedOption}
         >
           결과보기
         </S.Button>
