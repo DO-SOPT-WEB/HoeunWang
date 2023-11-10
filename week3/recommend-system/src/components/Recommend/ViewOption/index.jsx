@@ -1,12 +1,13 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import First from "./First";
 import Second from "./Second";
 import Third from "./Third";
 import { IceCreamOption } from "../../../constants/IceCreamOption";
 import * as S from "./ViewOption.style";
+import { IceCreamImg } from "../../../constants/IceCreamImg";
 
 function ViewOption({ selectedHandler, startHandler, resetHandler }) {
   const [nthChoice, setNthChoice] = useState(1);
@@ -25,9 +26,14 @@ function ViewOption({ selectedHandler, startHandler, resetHandler }) {
   };
 
   const handleRestart = () => {
-    resetHandler(); // Call the resetHandler to reset the state in the parent component
-    setNthChoice(1); // Reset nthChoice to 1 to start from the first step again
+    resetHandler();
+    setNthChoice(1);
   };
+
+  const finalFlavor =
+    IceCreamOption?.[selectedFlavorFirst]?.[selectedFlavorSecond]?.[
+      selectedFlavorThird
+    ];
 
   return (
     <>
@@ -60,12 +66,12 @@ function ViewOption({ selectedHandler, startHandler, resetHandler }) {
       {nthChoice === 4 && (
         <S.Container>
           <S.Title>너에게 이 맛을 추천해!</S.Title>
+
           <S.ContentContainer>
-            {
-              IceCreamOption?.[selectedFlavorFirst]?.[selectedFlavorSecond]?.[
-                selectedFlavorThird
-              ]
-            }
+            <S.ImageContainer>
+              <S.Image src={IceCreamImg[finalFlavor.key]} alt="Ice Cream" />
+            </S.ImageContainer>
+            {finalFlavor.value}
           </S.ContentContainer>
           <S.ButtonField>
             <S.Button onClick={handleRestart}>다시하기</S.Button>

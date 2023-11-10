@@ -21,6 +21,7 @@ export const Container = styled.div`
 
 export const ContentContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #ffefd5;
@@ -29,4 +30,31 @@ export const ContentContainer = styled.div`
   padding: 0.5% 2%;
   margin-top: 5%;
   border-radius: 5px;
+`;
+export const ButtonField = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 5%;
+`;
+export const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #bdb76b;
+  padding: 0.5% 1%;
+  border-radius: 5px;
+`;
+export const ImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+`;
+export const Image = styled.img`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 `;

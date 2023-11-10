@@ -11,5 +11,6 @@ html{
 body{
     margin: 0 auto;
    background-color: #FFFFE0;
+   
 }
 `;
