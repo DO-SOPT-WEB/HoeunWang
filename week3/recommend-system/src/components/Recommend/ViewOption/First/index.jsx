@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import * as S from "./First.style";
 
 const options = [
@@ -13,6 +14,7 @@ function First({
   startHandler,
   nthChoiceHandler,
 }) {
+  const [selectedOption, setSelectedOption] = useState(null);
   return (
     <S.Container>
       <S.Title>어떤 맛을 좋아해?</S.Title>
@@ -22,6 +24,11 @@ function First({
             key={option.value}
             onClick={() => {
               resultHandler(option.value);
+              setSelectedOption(option.value);
+            }}
+            style={{
+              backgroundColor:
+                selectedOption === option.value ? "#ffa07a" : "#ffefd5",
             }}
           >
             {option.label}
