@@ -1,15 +1,14 @@
 /* eslint-disable react/prop-types */
-import { useEffect } from "react";
-import * as S from "./Result.style";
+import { IceCreamOption } from "../../../../constants/IceCreamOption";
+import * as S from "./ResultOption.style";
 
-function Result({ result, nthChoiceHandler }) {
-  useEffect(() => {
-    console.log(result);
-  });
+function ResultOption({ result, nthChoiceHandler }) {
+  const resultFlavor = IceCreamOption?.[result];
+
   return (
     <S.Container>
       <S.Title>너에게 이 맛을 추천해!</S.Title>
-      <S.ContentContainer></S.ContentContainer>
+      <S.ContentContainer>{resultFlavor}</S.ContentContainer>
       <S.ButtonField>
         <S.Button
           onClick={() => {
@@ -23,4 +22,4 @@ function Result({ result, nthChoiceHandler }) {
   );
 }
 
-export default Result;
+export default ResultOption;

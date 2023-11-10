@@ -5,21 +5,23 @@ import { useState } from "react";
 import First from "./First";
 import Second from "./Second";
 import Third from "./Third";
-import Result from "./Result";
 import { IceCreamOption } from "../../../constants/IceCreamOption";
+import * as S from "./ViewOption.style";
 
 function ViewOption({ selectedHandler, startHandler }) {
   const [nthChoice, setNthChoice] = useState(1);
-  const [selectedFlavor, setSelectedFlavor] = useState(null);
+  const [selectedFlavorFirst, setSelectedFlavorFirst] = useState(null);
+  const [selectedFlavorSecond, setSelectedFlavorSecond] = useState(null);
+  const [selectedFlavorThird, setSelectedFlavorThird] = useState(null);
 
-  const handleSelect = (flavor) => {
-    setSelectedFlavor((prevFlavor) => {
-      const combinedFlavor = prevFlavor ? `${prevFlavor}.${flavor}` : flavor;
-      console.log(combinedFlavor);
-      console.log(IceCreamOption?.[combinedFlavor]);
-      return combinedFlavor;
-    });
-    console.log(IceCreamOption?.[selectedFlavor]);
+  const handleSelectFirst = (flavor) => {
+    setSelectedFlavorFirst(flavor);
+  };
+  const handleSelectSecond = (flavor) => {
+    setSelectedFlavorSecond(flavor);
+  };
+  const handleSelectThird = (flavor) => {
+    setSelectedFlavorThird(flavor);
   };
 
   return (
@@ -28,7 +30,7 @@ function ViewOption({ selectedHandler, startHandler }) {
         <First
           selectedHandler={selectedHandler}
           startHandler={startHandler}
-          resultHandler={handleSelect}
+          resultHandler={handleSelectFirst}
           nthChoiceHandler={(number) => {
             setNthChoice(number);
           }}
@@ -36,7 +38,7 @@ function ViewOption({ selectedHandler, startHandler }) {
       )}
       {nthChoice === 2 && (
         <Second
-          resultHandler={handleSelect}
+          resultHandler={handleSelectSecond}
           nthChoiceHandler={(number) => {
             setNthChoice(number);
           }}
@@ -44,19 +46,23 @@ function ViewOption({ selectedHandler, startHandler }) {
       )}
       {nthChoice === 3 && (
         <Third
-          resultHandler={handleSelect}
+          resultHandler={handleSelectThird}
           nthChoiceHandler={(number) => {
             setNthChoice(number);
           }}
         />
       )}
       {nthChoice === 4 && (
-        <Result
-          result={IceCreamOption?.[selectedFlavor]}
-          nthChoiceHandler={(number) => {
-            setNthChoice(number);
-          }}
-        />
+        <S.Container>
+          <S.Title>너에게 이 맛을 추천해!</S.Title>
+          <S.ContentContainer>
+            {
+              IceCreamOption?.[selectedFlavorFirst]?.[selectedFlavorSecond]?.[
+                selectedFlavorThird
+              ]
+            }
+          </S.ContentContainer>
+        </S.Container>
       )}
     </>
   );
