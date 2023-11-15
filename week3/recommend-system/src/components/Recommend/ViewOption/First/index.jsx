@@ -15,6 +15,8 @@ function First({
   nthChoiceHandler,
 }) {
   const [selectedOption, setSelectedOption] = useState(null);
+  const selectedCss = "#ffa07a";
+  const unSelectedCss = "#ffefd5";
   return (
     <S.Container>
       <S.Title>어떤 맛을 좋아해?</S.Title>
@@ -28,7 +30,7 @@ function First({
             }}
             style={{
               backgroundColor:
-                selectedOption === option.value ? "#ffa07a" : "#ffefd5",
+                selectedOption === option.value ? selectedCss : unSelectedCss,
             }}
           >
             {option.label}
