@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-
 import { useEffect, useState } from "react";
 import First from "./First";
 import Second from "./Second";

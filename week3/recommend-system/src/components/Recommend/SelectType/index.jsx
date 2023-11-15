@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import * as S from "./SelectType.style";
 
 function SelectType({ selectedType, selectedHandler, startHandler }) {

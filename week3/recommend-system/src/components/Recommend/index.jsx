@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import SelectType from "./SelectType";
 import ViewOption from "./ViewOption";
 import ViewRandom from "./ViewRandom";
