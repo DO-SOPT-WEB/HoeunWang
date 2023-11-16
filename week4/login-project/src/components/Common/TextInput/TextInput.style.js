@@ -43,7 +43,7 @@ export const Error = styled.span`
 
 export const Label = styled.label`
   display: flex;
-  width: 80%;
+  width: 10rem;
   align-items: flex-start;
   align-items: center;
   margin-right: 1rem;
