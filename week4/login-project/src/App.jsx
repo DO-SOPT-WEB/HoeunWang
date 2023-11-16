@@ -1,3 +1,4 @@
+import Button from "./components/Common/Button";
 import TextInput from "./components/Common/TextInput";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
         errorMessage={"중복된 아이디입니다."}
         isError
       />
+      <Button>확인</Button>
     </>
   );
 }
