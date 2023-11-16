@@ -4,6 +4,7 @@ const TextInput = ({
   name,
   placeholder,
   value,
+  label,
   onChange,
   type = "text",
   disabled,
@@ -13,7 +14,8 @@ const TextInput = ({
   ...rest
 }) => {
   return (
-    <>
+    <S.Container>
+      <S.Label>{label}</S.Label>
       <S.TextInputBorder error={isError} customStyle={customStyle}>
         <S.Input
           id={`text-input-${name}`}
@@ -28,7 +30,7 @@ const TextInput = ({
         />
       </S.TextInputBorder>
       {isError && <S.Error>{errorMessage}</S.Error>}
-    </>
+    </S.Container>
   );
 };
 

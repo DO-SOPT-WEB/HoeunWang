@@ -9,4 +9,6 @@ export const Button = styled.button`
   border-radius: 0.5rem;
   background-color: black;
   color: white;
+  ${({ customStyle }) => customStyle};
+  border: none;
 `;

@@ -1,10 +1,16 @@
 import styled, { css } from "styled-components";
 
+export const Container = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+`;
+
 export const TextInputBorder = styled.div`
   width: 100%;
   display: flex;
   border: 1px solid;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   padding: 0.5rem;
   ${({ error }) => {
     if (error) {
@@ -33,4 +39,13 @@ export const Error = styled.span`
   padding-left: 0.2rem;
   font-size: 0.8rem;
   color: red;
+`;
+
+export const Label = styled.label`
+  display: flex;
+  width: 80%;
+  align-items: flex-start;
+  align-items: center;
+  margin-right: 1rem;
+  font-weight: 700;
 `;
