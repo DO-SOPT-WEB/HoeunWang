@@ -1,5 +1,5 @@
 import fonts from "assets/fonts";
-import { createGlobalStyle } from "styled-components/macro";
+import { createGlobalStyle } from "styled-components";
 
 import Normalize from "./Normalize";
 
