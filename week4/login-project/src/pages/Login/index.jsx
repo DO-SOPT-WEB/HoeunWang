@@ -3,10 +3,13 @@ import Button from "../../components/Common/Button";
 import TextInput from "../../components/Common/TextInput";
 import * as S from "./Login.style";
 import { ROUTE } from "../../constants/route.constant";
+import { getUserInfo } from "../../service/auth";
 
 function Login() {
   const navigate = useNavigate();
-  const handleClickLogin = () => {};
+  const handleClickLogin = () => {
+    navigate(ROUTE.MYPAGE);
+  };
   const handleClickSignUp = () => {
     navigate(ROUTE.SIGN_UP);
   };

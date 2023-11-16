@@ -1,10 +1,10 @@
-import Login from "../Login";
+import { Outlet } from "react-router-dom";
 import * as S from "./Main.style";
 
 function Main() {
   return (
     <S.Container>
-      <Login />
+      <Outlet />
     </S.Container>
   );
 }
