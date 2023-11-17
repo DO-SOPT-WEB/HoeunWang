@@ -73,9 +73,11 @@ function SignUp() {
         <Button
           onClick={onClickCheckDuplicateID}
           customStyle={
-            checkDuplicated && clicked
-              ? "background-color:red"
-              : "background-color:green"
+            clicked
+              ? {
+                  backgroundColor: !checkDuplicated ? "red" : "green",
+                }
+              : null
           }
         >
           중복체크
