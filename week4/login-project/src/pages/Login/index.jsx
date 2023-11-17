@@ -6,14 +6,15 @@ import * as S from "./Login.style";
 import { ROUTE } from "../../constants/route.constant";
 import authApi from "../../api/auth.api";
 import { useState } from "react";
-import { useRecoilState, useSetRecoilState } from "recoil";
-import userInfo from "../../recoil/auth.atoms";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import userId from "../../service/auth/recoil/auth.atoms";
 
 function Login() {
   const navigate = useNavigate();
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const setRecoil = useSetRecoilState(userInfo);
+  const setRecoilId = useSetRecoilState(userId);
+  const userRecoilId = useRecoilValue(userId);
 
   const onChangeUserName = (e) => {
     const newUserName = e.target.value;
@@ -34,14 +35,10 @@ function Login() {
         },
       });
       if (response) {
-        setRecoil((prevUserInfo) => ({
-          ...prevUserInfo,
-          id: response.id,
-          userId: response.username,
-          nickname: response.nickname,
-        }));
+        setRecoilId(response.id);
         navigate(ROUTE.MYPAGE);
         console.log(response);
+        console.log(userRecoilId);
       }
     } catch (error) {
       console.error(error);

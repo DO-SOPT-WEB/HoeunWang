@@ -16,16 +16,15 @@ const authApi = {
       data: submitData,
     });
   },
-  checkDuplicateID({ id }) {
+  checkDuplicateID({ username }) {
     return publicApiInstance({
-      url: API.AUTH.CHECK_DUPLICATE_ID,
+      url: `${API.AUTH.CHECK_DUPLICATE_ID}?username=${username}`,
       method: "get",
-      params: { id },
     });
   },
-  GET_USER_DETAIL({ id }) {
+  getUserDetail({ memberId }) {
     return publicApiInstance({
-      url: `${API.USER.USER_INFO}/${id}`,
+      url: `${API.USER.USER_INFO}/${memberId}`,
       method: "get",
     });
   },
