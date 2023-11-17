@@ -7,7 +7,7 @@ import { ROUTE } from "../../constants/route.constant";
 import authApi from "../../api/auth.api";
 import { useState } from "react";
 import { useSetRecoilState } from "recoil";
-import userId from "../../service/auth/recoil/auth.atoms";
+import userId from "../../recoil/auth.atoms";
 
 function Login() {
   const navigate = useNavigate();

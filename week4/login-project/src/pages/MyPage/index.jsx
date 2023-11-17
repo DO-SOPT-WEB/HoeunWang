@@ -5,7 +5,7 @@ import { ROUTE } from "../../constants/route.constant";
 import * as S from "./MyPage.style";
 import { useEffect, useState } from "react";
 import authApi from "../../api/auth.api";
-import userId from "../../service/auth/recoil/auth.atoms";
+import userId from "../../recoil/auth.atoms";
 import ProfileImg from "../../assets/images/default-profile.png";
 
 function MyPage() {

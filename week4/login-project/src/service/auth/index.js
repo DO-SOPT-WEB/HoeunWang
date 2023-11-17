@@ -1,4 +1,4 @@
-import userId from "./recoil/auth.atoms";
+import userId from "../../recoil/auth.atoms";
 
 export const getUserInfo = () => userId;
 
