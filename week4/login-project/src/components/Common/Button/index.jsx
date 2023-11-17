@@ -1,8 +1,20 @@
+import { useState } from "react";
 import * as S from "./Button.style";
 
-const Button = ({ children, customStyle, disabled = false, ...rest }) => {
+const Button = ({
+  children,
+  customStyle,
+  disabled = false,
+  error = false,
+  ...rest
+}) => {
   return (
-    <S.Button customStyle={customStyle} disabled={disabled} {...rest}>
+    <S.Button
+      customStyle={customStyle}
+      disabled={disabled}
+      error={error}
+      {...rest}
+    >
       {children}
     </S.Button>
   );

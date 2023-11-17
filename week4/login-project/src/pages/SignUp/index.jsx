@@ -13,6 +13,7 @@ function SignUp() {
   const [password, setPassword] = useState("");
   const [nickname, setNickName] = useState("");
   const [checkDuplicated, setCheckDuplicated] = useState(false);
+  const [clicked, setClicked] = useState(false);
 
   const onChangeUserName = (e) => {
     const newUserName = e.target.value;
@@ -28,6 +29,7 @@ function SignUp() {
   };
 
   const onClickCheckDuplicateID = async () => {
+    setClicked(true);
     try {
       const response = await authApi.checkDuplicateID({ username });
 
@@ -68,7 +70,16 @@ function SignUp() {
           label={"ID"}
           placeholder={"아이디를 입력해주세요"}
         />
-        <Button onClick={onClickCheckDuplicateID}>중복체크</Button>
+        <Button
+          onClick={onClickCheckDuplicateID}
+          customStyle={
+            checkDuplicated && clicked
+              ? "background-color:red"
+              : "background-color:green"
+          }
+        >
+          중복체크
+        </Button>
       </S.IDContainer>
       <TextInput
         onChange={onChangePassword}
