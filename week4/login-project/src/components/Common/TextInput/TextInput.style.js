@@ -45,7 +45,7 @@ export const Error = styled.span`
 export const Label = styled.label`
   display: flex;
   align-items: flex-start;
-  width: 10rem;
+  width: 12rem;
   margin-right: 1rem;
   ${({ theme: { fonts } }) => fonts.korean.emphasis};
 `;

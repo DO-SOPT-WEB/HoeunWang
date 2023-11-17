@@ -6,6 +6,7 @@ import * as S from "./MyPage.style";
 import { useEffect, useState } from "react";
 import authApi from "../../api/auth.api";
 import userId from "../../service/auth/recoil/auth.atoms";
+import ProfileImg from "../../assets/images/default-profile.png";
 
 function MyPage() {
   const navigate = useNavigate();
@@ -36,8 +37,15 @@ function MyPage() {
   return (
     <S.Container>
       <S.Title>MyPage</S.Title>
-      <p>{username}</p>
-      <p>{nickname}</p>
+      <S.SubContainer>
+        <S.ImgContainer>
+          <S.Img src={ProfileImg} />
+        </S.ImgContainer>
+        <S.ContentContainer>
+          <S.Content>ID : {username}</S.Content>
+          <S.Content>닉네임 : {nickname}</S.Content>
+        </S.ContentContainer>
+      </S.SubContainer>
       <Button onClick={handleLogout}>로그아웃</Button>
     </S.Container>
   );
