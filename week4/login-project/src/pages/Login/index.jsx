@@ -36,9 +36,9 @@ function Login() {
       });
       if (response) {
         setRecoilId(response.id);
-        navigate(ROUTE.MYPAGE);
         console.log(response);
-        console.log(userRecoilId);
+        console.log(response.id); // 확인용
+        navigate(`${ROUTE.MYPAGE}/${response.id}`);
       }
     } catch (error) {
       console.error(error);

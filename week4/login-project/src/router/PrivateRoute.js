@@ -5,7 +5,7 @@ import PrivateRoute from "../hoc/PrivateRoute";
 
 const routesPrivate = [
   {
-    path: ROUTE.MYPAGE,
+    path: `${ROUTE.MYPAGE}/:userId`,
     element: MyPage,
   },
 ];
