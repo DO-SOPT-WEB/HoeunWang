@@ -1,8 +1,9 @@
 import axios from "axios";
 import { successHandler, errorHandler } from "./responseHandler";
+import { ROOT_API_URL } from "../../constants/api.constant";
 
 const publicApiInstance = axios.create({
-  baseURL: "/",
+  baseURL: ROOT_API_URL,
 });
 
 publicApiInstance.defaults.timeout = 2500;

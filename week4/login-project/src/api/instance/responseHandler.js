@@ -1,6 +1,6 @@
 export function successHandler(response) {
-  const { data, headers } = response;
-  return { ...data, headers };
+  const { data } = response;
+  return { ...data };
 }
 
 export function errorHandler(error) {

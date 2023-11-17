@@ -1,8 +1,5 @@
-import { USER_INFO } from "../../constants";
-import handleLocalstorage from "../../utils/handleLocalstorage";
+import userInfo from "../../recoil/auth.atoms";
 
-export const deleteUserInfo = () => handleLocalstorage.remove(USER_INFO);
-
-export const getUserInfo = () => handleLocalstorage.get(USER_INFO);
+export const getUserInfo = () => userInfo;
 
 export const isLogin = () => getUserInfo();

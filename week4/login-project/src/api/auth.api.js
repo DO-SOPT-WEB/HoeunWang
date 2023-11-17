@@ -1,4 +1,4 @@
-import { API } from "constant/api.constant";
+import { API } from "../constants/api.constant";
 import publicApiInstance from "./instance/publicApiInstance";
 
 const authApi = {
@@ -16,11 +16,11 @@ const authApi = {
       data: submitData,
     });
   },
-  checkDuplicateID({ ID }) {
+  checkDuplicateID({ id }) {
     return publicApiInstance({
       url: API.AUTH.CHECK_DUPLICATE_ID,
-      method: "patch",
-      params: { ID },
+      method: "get",
+      params: { id },
     });
   },
   GET_USER_DETAIL({ id }) {
