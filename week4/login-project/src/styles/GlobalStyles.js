@@ -1,7 +1,6 @@
-import fonts from "assets/fonts";
 import { createGlobalStyle } from "styled-components";
-
-import Normalize from "./Normalize";
+import Normalize from "./Nomarlize";
+import fonts from "../assets/fonts";
 
 const GlobalStyles = createGlobalStyle`
 ${Normalize}

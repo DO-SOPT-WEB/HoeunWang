@@ -50,6 +50,7 @@ function Login() {
   };
   return (
     <S.Container>
+      <S.Title>Login</S.Title>
       <TextInput
         label={"ID"}
         placeholder={"아이디를 입력해주세요"}

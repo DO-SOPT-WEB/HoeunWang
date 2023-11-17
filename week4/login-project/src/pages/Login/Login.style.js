@@ -19,3 +19,8 @@ export const ButtonContainer = styled.div`
   margin-top: 3rem;
   width: 100%;
 `;
+
+export const Title = styled.div`
+  display: flex;
+  font-size: ${({ theme: { fonts } }) => fonts.korean.title};
+`;

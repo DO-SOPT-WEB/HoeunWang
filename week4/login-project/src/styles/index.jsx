@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { ThemeProvider } from "styled-components/macro";
+import { ThemeProvider } from "styled-components";
 import theme from "./theme";
 import GlobalStyles from "./GlobalStyles";
 
