@@ -35,6 +35,7 @@ function MyPage() {
   };
   return (
     <S.Container>
+      <S.Title>MyPage</S.Title>
       <p>{username}</p>
       <p>{nickname}</p>
       <Button onClick={handleLogout}>로그아웃</Button>

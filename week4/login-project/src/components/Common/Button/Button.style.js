@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${({ theme: { mixin } }) => mixin.flexCenter({})}
   padding: 0.5rem;
   width: 100%;
   border-radius: 0.5rem;
-  background-color: black;
-  color: white;
-  ${({ customStyle }) => customStyle};
+  background-color: ${({ theme: { colors } }) => colors.primary.normal};
+  color: ${({ theme: { colors } }) => colors.greyScale.white};
+
   border: none;
+  ${({ theme: { fonts } }) => fonts.korean.emphasis};
+  ${({ customStyle }) => customStyle};
 `;

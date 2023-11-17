@@ -61,6 +61,7 @@ function SignUp() {
   };
   return (
     <S.Container>
+      <S.Title>SignUp</S.Title>
       <S.IDContainer>
         <TextInput
           onChange={onChangeUserName}

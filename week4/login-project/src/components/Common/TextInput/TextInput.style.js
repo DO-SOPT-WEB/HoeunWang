@@ -1,15 +1,17 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
-  justify-content: space-around;
+  ${({ theme: { mixin } }) =>
+    mixin.flexBox({
+      justify: "space-around",
+    })};
   width: 100%;
 `;
 
 export const TextInputBorder = styled.div`
   width: 100%;
   display: flex;
-  border: 1px solid;
+  border: 1px solid ${({ theme: { colors } }) => colors.primary.normal};
   border-radius: 0.2rem;
   padding: 0.5rem;
   ${({ error }) => {
@@ -17,9 +19,9 @@ export const TextInputBorder = styled.div`
       return css`
         margin-bottom: 0.2rem;
         border: 1px solid;
-        border-color: red;
+        border-color: ${({ theme: { colors } }) => colors.important.normal};
         & > input {
-          color: red;
+          color: ${({ theme: { colors } }) => colors.important.normal};
         }
       `;
     }
@@ -28,8 +30,7 @@ export const TextInputBorder = styled.div`
 `;
 
 export const Input = styled.input`
-  display: flex;
-  align-items: center;
+  ${({ theme: { mixin } }) => mixin.flexCenter({})}
   border: none;
   outline: none;
 `;
@@ -38,14 +39,13 @@ export const Error = styled.span`
   align-self: flex-start;
   padding-left: 0.2rem;
   font-size: 0.8rem;
-  color: red;
+  color: ${({ theme: { colors } }) => colors.important.normal};
 `;
 
 export const Label = styled.label`
   display: flex;
-  width: 10rem;
   align-items: flex-start;
-  align-items: center;
+  width: 10rem;
   margin-right: 1rem;
-  font-weight: 700;
+  ${({ theme: { fonts } }) => fonts.korean.emphasis};
 `;
