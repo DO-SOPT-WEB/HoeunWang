@@ -6,7 +6,7 @@ import * as S from "./Login.style";
 import { ROUTE } from "../../constants/route.constant";
 import authApi from "../../api/auth.api";
 import { useState } from "react";
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import userId from "../../service/auth/recoil/auth.atoms";
 
 function Login() {
@@ -14,7 +14,6 @@ function Login() {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const setRecoilId = useSetRecoilState(userId);
-  const userRecoilId = useRecoilValue(userId);
 
   const onChangeUserName = (e) => {
     const newUserName = e.target.value;
@@ -36,8 +35,6 @@ function Login() {
       });
       if (response) {
         setRecoilId(response.id);
-        console.log(response);
-        console.log(response.id); // 확인용
         navigate(`${ROUTE.MYPAGE}/${response.id}`);
       }
     } catch (error) {

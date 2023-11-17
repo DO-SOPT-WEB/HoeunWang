@@ -1,4 +1,3 @@
-import { useRecoilState } from "recoil";
 import authApi from "../../api/auth.api";
 import Button from "../../components/Common/Button";
 import TextInput from "../../components/Common/TextInput";
@@ -55,6 +54,8 @@ function SignUp() {
         },
       });
       if (response) {
+        console.log(response);
+        console.log("회원가입 성공!");
         navigate(ROUTE.LOGIN);
       }
     } catch (error) {
