@@ -13,6 +13,7 @@ function MyPage() {
   const memberId = useRecoilValue(userId);
   const [username, setUserName] = useState("");
   const [nickname, setNickName] = useState("");
+  const resetUserId = useResetRecoilState(userId);
 
   useEffect(() => {
     console.log(memberId);
@@ -32,6 +33,7 @@ function MyPage() {
   }, []);
 
   const handleLogout = () => {
+    resetUserId();
     navigate(ROUTE.LOGIN);
   };
   return (
