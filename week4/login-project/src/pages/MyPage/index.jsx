@@ -17,7 +17,7 @@ function MyPage() {
     console.log(memberId);
     const fetchData = async () => {
       try {
-        const response = await authApi.getUserDetail(memberId);
+        const response = await authApi.getUserDetail({ memberId });
         if (response) {
           setUserName(response.username);
           setNickName(response.nickname);
